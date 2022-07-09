@@ -18,8 +18,8 @@ return new class extends Migration
             $table->integer('id_wedding');
             $table->enum('type', ['Akad', 'Resepsi', 'Ngunduh Mantu']);
             $table->dateTime('date');
-            $table->text('loc');
-            $table->string('maps');
+            $table->text('address');
+            $table->text('maps');
             $table->timestamps();
         });
     }

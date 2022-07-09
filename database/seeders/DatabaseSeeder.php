@@ -16,5 +16,13 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(RoleSeeder::class);
         $this->call(UserSeeder::class);
+        $this->call(BankSeeder::class);
+        $this->call(WeddingSeeder::class);
+        $this->call(BrideSeeder::class);
+        $this->call(DetailSeeder::class);
+        $this->call(GiftSeeder::class);
+        $this->call(RsvpSeeder::class);
+        $this->call(WishesSeeder::class);
+        $this->call(ThankSeeder::class);
     }
 }

@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('instagram');
             $table->integer('id_bank');
             $table->string('acc_name');
-            $table->integer('acc_number');
+            $table->bigInteger('acc_number');
             $table->enum('gender', ['Male', 'Female']);
             $table->timestamps();
         });

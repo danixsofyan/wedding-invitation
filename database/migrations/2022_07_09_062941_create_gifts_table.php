@@ -15,8 +15,10 @@ return new class extends Migration
     {
         Schema::create('gifts', function (Blueprint $table) {
             $table->id();
+            $table->integer('id_wedding');
             $table->string('name');
             $table->text('address');
+            $table->text('maps');
             $table->text('note');
             $table->timestamps();
         });
