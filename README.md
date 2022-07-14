@@ -3,7 +3,7 @@
 ## Setup this repository first
 Usage
 ```bash
-https://github.com/undangan-io/undangan
+git clone https://github.com/undangan-io/undangan
 cd undangan
 ```
 
@@ -23,6 +23,11 @@ composer install
 cp .env.example .env
 php artisan key:generate
 npm install && npm run dev
-php artisan migrate
+php artisan migrate:fresh --seed
 php artisan serve
 ```
+
+### login
+http://undangan.test/admin
+E : danixsofyan@gmail.com
+P : 123qweasd
