@@ -22,5 +22,14 @@ class UserSeeder extends Seeder
         ]);
 
         $superadmin->assignRole('Super admin');
+
+        $superadmin = User::create([
+            'name'      => 'Admin',
+            'email'     => 'admin@undangan.io',
+            'password'  => bcrypt('123qweasd'),
+            'email_verified_at' => now()
+        ]);
+
+        $superadmin->assignRole('Super admin');
     }
 }

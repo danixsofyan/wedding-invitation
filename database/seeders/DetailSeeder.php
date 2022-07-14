@@ -16,7 +16,7 @@ class DetailSeeder extends Seeder
     public function run()
     {
         Detail::create([
-            'id_wedding'        => 1,
+            'wedding_id'        => 1,
             'type'              => 'Akad',
             'date'              => '2022-11-14 08:00:00',
             'address'           => 'Gedung UPI Purwakarta Jl. Veteran No.8, Nagri Kaler, Kec. Purwakarta, Kabupaten Purwakarta, Jawa Barat 41115',
@@ -26,7 +26,7 @@ class DetailSeeder extends Seeder
         ]);
 
         Detail::create([
-            'id_wedding'        => 1,
+            'wedding_id'        => 1,
             'type'              => 'Resepsi',
             'date'              => '2022-11-14 08:00:00',
             'address'           => 'Gedung UPI Purwakarta Jl. Veteran No.8, Nagri Kaler, Kec. Purwakarta, Kabupaten Purwakarta, Jawa Barat 41115',

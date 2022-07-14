@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('gifts', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_wedding');
+            $table->foreignId('wedding_id')->constrained()->onDelete('cascade');
             $table->string('name');
             $table->text('address');
             $table->text('maps');

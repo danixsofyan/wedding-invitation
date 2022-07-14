@@ -15,7 +15,7 @@ class WishesSeeder extends Seeder
     public function run()
     {
         Wishes::create([
-            'id_wedding'            => 1,
+            'wedding_id'            => 1,
             'name'                  => 'Dani Sofyan',
             'comment'               => 'Semoga sakinah mawadah warohmah',
             'created_at'            => now(),

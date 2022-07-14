@@ -15,7 +15,7 @@ class RsvpSeeder extends Seeder
     public function run()
     {
         Rsvp::create([
-            'id_wedding'            => 1,
+            'wedding_id'            => 1,
             'name'                  => 'Dani Sofyan',
             'amount'                => 2,
             'status'                => 'Saya akan datang',

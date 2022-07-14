@@ -16,6 +16,7 @@ class ThankSeeder extends Seeder
     public function run()
     {
         Thank::create([
+            'wedding_id'    => 1,
             'note'          => 'Ungkapan terima kasih yang sangat tulus dari kami apabila Saudara/i berkenan hadir dan turut memberikan doa restu kepada kami.',
             'created_at'    => now(),
             'updated_at'    => now()

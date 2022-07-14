@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('details', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_wedding');
+            $table->integer('wedding_id');
             $table->enum('type', ['Akad', 'Resepsi', 'Ngunduh Mantu']);
             $table->dateTime('date');
             $table->text('address');

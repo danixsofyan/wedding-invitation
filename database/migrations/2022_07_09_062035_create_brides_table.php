@@ -15,15 +15,16 @@ return new class extends Migration
     {
         Schema::create('brides', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_wedding');
+            $table->foreignId('wedding_id')->constrained()->onDelete('cascade');
             $table->string('name');
             $table->string('name_father');
             $table->string('name_mother');
             $table->string('instagram');
-            $table->integer('id_bank');
+            $table->foreignId('bank_id')->constrained()->onDelete('cascade');
             $table->string('acc_name');
             $table->bigInteger('acc_number');
             $table->enum('gender', ['Male', 'Female']);
+            $table->string('photo');
             $table->timestamps();
         });
     }

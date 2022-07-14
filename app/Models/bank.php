@@ -9,4 +9,9 @@ class Bank extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function Bride()
+    {
+        return $this->hasMany(Bride::class);
+    }
 }

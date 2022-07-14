@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('rsvps', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_wedding');
+            $table->foreignId('wedding_id')->constrained()->onDelete('cascade');
             $table->string('name');
             $table->enum('amount', ['1', '2']);
             $table->enum('status', ['Saya akan datang', 'Maaf, saya tidak bisa datang']);

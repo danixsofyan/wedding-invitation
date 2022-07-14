@@ -15,7 +15,7 @@ class GiftSeeder extends Seeder
     public function run()
     {
         Gift::create([
-            'id_wedding'        => 1,
+            'wedding_id'        => 1,
             'name'              => 'Rumah di Bandung',
             'address'           => 'Jl. Sari Asih No.54, Sarijadi, Kec. Sukasari, Kota Bandung, Jawa Barat 40151',
             'maps'              => 'https://goo.gl/maps/1abtBDs2c71h5Nx56',
