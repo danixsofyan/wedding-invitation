@@ -1,0 +1,1336 @@
+.countdown {
+    color: #fff;
+    font-size: 130px;
+    font-weight: 300;
+    margin-bottom: 40px;
+    position: relative;
+    left: 150px;
+    opacity: 0
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+* a {
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--bg-color);
+  height: 100%;
+  font-family: Jost;
+  width: 100%;
+  height: 100%;
+}
+
+:root {
+  --primary-color: #c6ad76;
+  --secondary-color: #9f957e;
+  --bg-color: #fbfaf8;
+  --sec-bg-color: #f0ebde;
+  --border-color: #f2f2f2;
+  --bg-btn-primary-color: #c6ad76;
+  --text-btn-primary-color: #f2f2f2;
+  --bg-color-nav: #fff;
+  --bg-color-nav-active: #fbf6e9;
+  --bg-color-nav-active-hover: #faeed1;
+  --text-color-nav-active-hover: #ddb96d;
+  --bg-card-footer: #fbfaf8;
+  --text-createdBy: #fff;
+}
+
+#pilih-tema a {
+  position: absolute;
+  z-index: 99999;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #f7931e;
+  padding: 0.8em 2.5em;
+  border-radius: 8px;
+  color: white;
+  text-transform: uppercase;
+}
+
+#pembukaan {
+  /* ---- stats.js ---- */
+  height: 100vh;
+  padding: 0;
+  width: 100vw;
+  position: absolute;
+  z-index: 999;
+}
+
+#pembukaan #particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: 20%;
+  background-position: 50% 50%;
+}
+
+#pembukaan .js-count-particles {
+  font-size: 1.1em;
+}
+
+#pembukaan #stats {
+  border-radius: 3px 3px 0 0;
+  overflow: hidden;
+}
+
+#pembukaan .count-particles {
+  border-radius: 0 0 3px 3px;
+}
+
+#pembukaan .animation_background {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+
+#pembukaan .wrapper {
+  margin: 2em 0;
+}
+
+#pembukaan .display {
+  display: none;
+  -webkit-animation: fadein 2s;
+          animation: fadein 2s;
+}
+
+#pembukaan .pembukaan-2 {
+  margin: 0;
+}
+
+#pembukaan .pembukaan-2 .pembukaan-3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  width: 100vw;
+  pointer-events: auto;
+  background-color: var(--bg-color);
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  outline: 0;
+  height: 100vh;
+  border: none;
+}
+
+#pembukaan .pembukaan-2 .pembukaan-3 .decoration .decoration-atas-kiri {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#pembukaan .pembukaan-2 .pembukaan-3 .decoration .decoration-atas-kanan {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#pembukaan .pembukaan-2 .pembukaan-3 .decoration .decoration-bawah-kiri {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#pembukaan .pembukaan-2 .pembukaan-3 .decoration .decoration-bawah-kanan {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#pembukaan .pembukaan-2 .pembukaan-3 .modal-body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+#pembukaan .pembukaan-2 .pembukaan-3 .modal-body .text-sambutan {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+}
+
+#pembukaan .pembukaan-2 .pembukaan-3 .modal-body .text-sambutan svg#our {
+  left: 6.2em;
+  position: absolute;
+  bottom: 7em;
+  -webkit-animation: fill 0.9s ease forwards 5s;
+          animation: fill 0.9s ease forwards 5s;
+}
+
+#pembukaan .pembukaan-2 .pembukaan-3 .modal-body .text-sambutan svg#our path {
+  stroke-dasharray: 410;
+  stroke-dashoffset: 410;
+  -webkit-animation: line-anim 10s ease forwards;
+          animation: line-anim 10s ease forwards;
+}
+
+#pembukaan .pembukaan-2 .pembukaan-3 .modal-body .text-sambutan svg#wedding {
+  -webkit-animation: fill 0.9s ease forwards 5s;
+          animation: fill 0.9s ease forwards 5s;
+}
+
+#pembukaan .pembukaan-2 .pembukaan-3 .modal-body .text-sambutan svg#wedding path {
+  stroke-dasharray: 814;
+  stroke-dashoffset: 814;
+  -webkit-animation: line-anim 5s ease forwards;
+          animation: line-anim 5s ease forwards;
+}
+
+#pembukaan .pembukaan-2 .pembukaan-3 .modal-body .text-sambutan svg#day {
+  position: absolute;
+  right: 5em;
+  top: 6.8em;
+  -webkit-transform: rotate(-11deg);
+          transform: rotate(-11deg);
+  -webkit-animation: fill 0.9s ease forwards 5s;
+          animation: fill 0.9s ease forwards 5s;
+}
+
+#pembukaan .pembukaan-2 .pembukaan-3 .modal-body .text-sambutan svg#day path {
+  stroke-dasharray: 549;
+  stroke-dashoffset: 549;
+  -webkit-animation: line-anim 10s ease forwards;
+          animation: line-anim 10s ease forwards;
+}
+
+@-webkit-keyframes line-anim {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes line-anim {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes fill {
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: #c6ad76;
+    border-width: 0;
+  }
+}
+
+@keyframes fill {
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: #c6ad76;
+    border-width: 0;
+  }
+}
+
+#pembukaan .pembukaan-2 .pembukaan-3 .modal-body .nama-mempelai {
+  font-size: 12px;
+  line-height: 17px;
+  letter-spacing: 0.1em;
+  color: #9f957e;
+  padding-top: 5em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#pembukaan .pembukaan-2 .pembukaan-3 .modal-body .nama-mempelai svg.iconify {
+  margin: 0 0.3em;
+}
+
+#pembukaan .pembukaan-2 .pembukaan-3 .modal-body .btn-buka {
+  text-align: center;
+  padding-top: 0.6em;
+}
+
+#pembukaan .pembukaan-2 .pembukaan-3 .modal-body .btn-buka button {
+  padding: 0.8em 1.8em;
+  border: 1px solid var(--primary-color);
+  color: var(--text-btn-primary-color);
+  border-radius: 30em;
+  background-color: var(--primary-color);
+  font-size: 14px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  margin-top: 2em;
+}
+
+.owl-dots {
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+  right: 0;
+}
+
+.owl-dots .owl-dot.active span {
+  background: var(--primary-color) !important;
+}
+
+.owl-dots .owl-dot span {
+  background: transparent !important;
+  border: 1px solid var(--primary-color) !important;
+}
+
+audio {
+  display: none;
+}
+
+.play-music {
+  position: fixed;
+  right: 0;
+  top: 2em;
+  left: 70%;
+  cursor: pointer;
+  z-index: 2;
+  text-align: center;
+}
+
+.play-music p {
+  color: #cba89f;
+  font-size: 0.8em;
+  margin-bottom: 0.5em;
+}
+
+.play-music #icon-play {
+  width: 50px;
+}
+
+.fade {
+  opacity: 0.6 !important;
+}
+
+.fade:hover {
+  opacity: 0.8;
+}
+
+.static {
+  position: static;
+}
+
+.cover {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.owl-carousel .owl-slide {
+  position: relative;
+  height: 100vh;
+  background-color: lightgray;
+}
+
+.owl-carousel .owl-dots,
+.owl-carousel .owl-nav {
+  position: absolute;
+}
+
+.owl-carousel .owl-dots .owl-dot,
+.owl-carousel .owl-nav [class*="owl-"]:focus {
+  outline: none;
+}
+
+.owl-carousel .owl-dots .owl-dot span {
+  background: transparent;
+  border: 1px solid var(--main-black-color);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.owl-carousel .owl-dots .owl-dot:hover span,
+.owl-carousel .owl-dots .owl-dot.active span {
+  background: var(--main-black-color);
+}
+
+.scroll-up {
+  position: absolute;
+  bottom: 18%;
+  left: 50%;
+  opacity: 0.7;
+  z-index: 2;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.scroll-up .bounce {
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation: bounce 3.6s ease infinite;
+          animation: bounce 3.6s ease infinite;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  5.55556% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  11.11111% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  22.22222% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
+  27.77778% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  33.33333% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
+  44.44444% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  5.55556% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  11.11111% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  22.22222% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
+  27.77778% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  33.33333% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
+  44.44444% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.tab-nav-container {
+  border: 1px solid #f2f2f2;
+  background-color: var(--bg-color-nav);
+  -webkit-box-shadow: 0px -5px 15px rgba(157, 137, 92, 0.1);
+          box-shadow: 0px -5px 15px rgba(157, 137, 92, 0.1);
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  padding: 10px 20px;
+  position: fixed;
+  bottom: 5%;
+  z-index: 2;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.tab-nav-container a {
+  text-decoration: none;
+}
+
+.tab {
+  border-radius: 50px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+      align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 15px;
+  -webkit-transition: background 0.4s ease;
+  transition: background 0.4s ease;
+}
+
+.tab svg {
+  height: 22px !important;
+}
+
+.tab p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  max-width: 0;
+}
+
+.tab-active {
+  background-color: var(--bg-color-nav-active);
+  color: var(--primary-color);
+  border-radius: 30px;
+}
+
+.tab-active p {
+  margin: 10px 0 10px 10px;
+  max-width: 200px;
+  -webkit-transition: max-width 0.4s linear;
+  transition: max-width 0.4s linear;
+}
+
+.tab-active:hover {
+  color: var(--primary-color);
+  background-color: var(--bg-color-nav-active-hover);
+}
+
+section.wedding-day {
+  margin-top: 100px;
+  text-align: center;
+  position: relative;
+  margin-bottom: 1em;
+}
+
+section.wedding-day::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  z-index: -1;
+  background-image: url(../icons/ic_decoration.svg);
+  display: block;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: -14%;
+}
+
+section.wedding-day::after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 150px;
+  z-index: -1;
+  background-image: url(../icons/ic_decoration_2.svg);
+  display: block;
+  right: 0%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: -14%;
+}
+
+section.wedding-day .title {
+  font-size: 35px;
+  line-height: 20px;
+  color: var(--primary-color);
+  font-family: "Great Vibes", cursive;
+}
+
+section.wedding-day .hadist {
+  font-family: Jost;
+  margin-top: 1em;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--secondary-color);
+}
+
+section.wedding-day .pengantin {
+  margin-top: 38px;
+}
+
+section.wedding-day .pengantin .nama {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: 0.1em;
+  margin-top: 12px;
+  text-transform: capitalize;
+  color: var(--primary-color);
+}
+
+section.wedding-day .pengantin .anak {
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: capitalize;
+  color: var(--secondary-color);
+}
+
+section.wedding-day .pengantin .nama-orangtua {
+  font-weight: lighter;
+  font-size: 18px;
+  line-height: 26px;
+  text-transform: capitalize;
+  color: var(--secondary-color);
+}
+
+section.save-the-date {
+  margin-top: 100px;
+  text-align: center;
+  position: relative;
+}
+
+section.save-the-date .title {
+  font-size: 35px;
+  line-height: 20px;
+  color: var(--primary-color);
+  font-family: "Great Vibes", cursive;
+  margin-bottom: 1em;
+}
+
+section.save-the-date .informasi {
+  margin-top: 25px;
+}
+
+section.save-the-date .informasi .nama-acara {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: 0.1em;
+  text-transform: capitalize;
+  color: var(--secondary-color);
+}
+
+section.save-the-date .informasi img {
+  margin-top: 20px;
+  height: 142px;
+  width: 142px;
+}
+
+section.save-the-date .informasi .waktu-dan-tempat {
+  margin: 20px 0;
+}
+
+section.save-the-date .informasi .waktu-dan-tempat .time {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.1em;
+  text-transform: capitalize;
+  color: var(--secondary-color);
+  margin: 0;
+}
+
+section.save-the-date .informasi .waktu-dan-tempat .place {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.1em;
+  text-transform: capitalize;
+  color: var(--secondary-color);
+  margin: 3px 0;
+}
+
+section.save-the-date .informasi .waktu-dan-tempat .timer {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.1em;
+  text-transform: capitalize;
+  color: var(--secondary-color);
+  margin: 0;
+}
+
+section.save-the-date .informasi .waktu-dan-tempat .btn-pengingat {
+  padding-top: 1em;
+}
+
+section.save-the-date .informasi .waktu-dan-tempat .btn-pengingat a {
+  color: var(--primary-color);
+  text-decoration: none;
+  border: 1px solid var(--primary-color);
+  border-radius: 30em;
+  padding: 0.5em 3em;
+}
+
+section.location {
+  margin-top: 100px;
+  text-align: center;
+  position: relative;
+}
+
+section.location .title {
+  font-size: 35px;
+  line-height: 20px;
+  color: var(--primary-color);
+  font-family: "Great Vibes", cursive;
+  margin-bottom: 1em;
+}
+
+section.location iframe {
+  width: 100%;
+  margin-top: 3em;
+}
+
+section.gallery {
+  margin-top: 100px;
+  text-align: center;
+  position: relative;
+}
+
+section.gallery::before {
+  content: "";
+  position: absolute;
+  width: 130px;
+  height: 150px;
+  z-index: -1;
+  background-image: url(../icons/ic_decoration_gallery.png);
+  display: block;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 5%;
+}
+
+section.gallery .title {
+  font-size: 35px;
+  line-height: 20px;
+  color: var(--primary-color);
+  font-family: "Great Vibes", cursive;
+  margin-bottom: 1em;
+}
+
+section.gallery .row::after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 150px;
+  z-index: -1;
+  background-image: url(../icons/ic_decoration_gallery_2.png);
+  display: block;
+  right: 0%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 50%;
+}
+
+section.gallery .row .frame {
+  background-color: white;
+  padding: 1em;
+  text-align: left;
+  border-radius: 4px;
+  margin: 1em;
+  -webkit-box-shadow: 0px 15px 30px rgba(208, 208, 208, 0.05);
+          box-shadow: 0px 15px 30px rgba(208, 208, 208, 0.05);
+  position: relative;
+}
+
+section.gallery .row .frame::before {
+  content: "";
+  position: absolute;
+  width: 130px;
+  height: 100px;
+  background-image: url(../icons/ic_lem.svg);
+  display: block;
+  left: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 0.2em;
+  opacity: 0.8;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+section.gallery .row .frame img {
+  padding-top: 0.6em;
+  border-radius: 4px;
+}
+
+section.gallery .row .frame h3.caption {
+  font-size: 20px;
+  line-height: 29px;
+  letter-spacing: 0.1em;
+  text-transform: capitalize;
+  color: var(--primary-color);
+}
+
+section.gallery .row .frame p.date {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.1em;
+  text-transform: capitalize;
+  color: var(--secondary-color);
+}
+
+section.doa-mereka {
+  margin-top: 100px;
+  text-align: center;
+  position: relative;
+}
+
+section.doa-mereka .title {
+  font-size: 35px;
+  line-height: 20px;
+  color: var(--primary-color);
+  font-family: "Great Vibes", cursive;
+  margin-bottom: 1em;
+}
+
+section.doa-mereka .card-doa {
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 0.8em;
+  -webkit-box-shadow: 0px 15px 30px rgba(208, 208, 208, 0.05);
+          box-shadow: 0px 15px 30px rgba(208, 208, 208, 0.05);
+  margin: 0 0.5em;
+  text-align: left;
+}
+
+section.doa-mereka .card-doa .nama-dan-doa {
+  padding-left: 5px;
+  padding-left: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+section.doa-mereka .card-doa .nama-dan-doa p.nama {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.1em;
+  text-transform: capitalize;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+}
+
+section.doa-mereka .card-doa .nama-dan-doa p.doa {
+  font-size: 12px;
+  line-height: 17px;
+  text-transform: capitalize;
+  color: var(--secondary-color);
+}
+
+section.doa-mereka .owl-theme .owl-dots {
+  bottom: -2.5em !important;
+}
+
+section.konfirmasi-kedatangan {
+  margin-top: 150px;
+  padding: 3em 1em;
+  text-align: center;
+  position: relative;
+  background-color: var(--sec-bg-color);
+}
+
+section.konfirmasi-kedatangan .title {
+  font-size: 35px;
+  line-height: 20px;
+  color: var(--primary-color);
+  font-family: "Great Vibes", cursive;
+  margin-bottom: 1em;
+}
+
+section.konfirmasi-kedatangan .form-konfirmasi {
+  text-align: left;
+}
+
+section.konfirmasi-kedatangan .form-konfirmasi p,
+section.konfirmasi-kedatangan .form-konfirmasi label {
+  color: var(--secondary-color);
+}
+
+section.konfirmasi-kedatangan .form-konfirmasi .form-check label {
+  font-size: 14px;
+}
+
+section.konfirmasi-kedatangan .form-konfirmasi .form-check .form-check-input:checked {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+section.konfirmasi-kedatangan .form-konfirmasi textarea {
+  color: var(--secondary-color);
+  font-size: 14px;
+}
+
+section.konfirmasi-kedatangan .form-konfirmasi .btn-submit {
+  padding-top: 1em;
+}
+
+section.konfirmasi-kedatangan .form-konfirmasi .btn-submit button.btn-kirim {
+  color: var(--text-btn-primary-color);
+  text-decoration: none;
+  border: 1px solid #c6ad76;
+  border-radius: 30em;
+  padding: 0.5em 3em;
+  border: none;
+  background-color: var(--primary-color);
+}
+
+section.konfirmasi-kedatangan .form-konfirmasi .btn-submit button.btn-loading {
+  color: var(--text-btn-primary-color);
+  text-decoration: none;
+  border: 1px solid #c6ad76;
+  border-radius: 30em;
+  padding: 0.5em 1em;
+  background-color: #c6ad76;
+}
+
+section.protokol-kesehatan {
+  margin-top: 100px;
+  text-align: center;
+  position: relative;
+}
+
+section.protokol-kesehatan .title {
+  font-size: 35px;
+  line-height: 20px;
+  color: var(--primary-color);
+  font-family: "Great Vibes", cursive;
+  margin-bottom: 1em;
+}
+
+section.protokol-kesehatan img {
+  width: 50%;
+}
+
+section.protokol-kesehatan .information {
+  text-align: left;
+  padding: 0 1em;
+}
+
+section.protokol-kesehatan .information img {
+  width: 10%;
+  float: left;
+}
+
+section.protokol-kesehatan .information .detail-info {
+  padding-left: 3em;
+}
+
+section.protokol-kesehatan .information .detail-info h3.subtitle {
+  font-size: 20px;
+  line-height: 29px;
+  text-transform: capitalize;
+  color: var(--secondary-color);
+}
+
+section.protokol-kesehatan .information .detail-info p {
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: capitalize;
+  color: var(--secondary-color);
+}
+
+section.undangan {
+  margin-top: 100px;
+  padding-top: 35px;
+  text-align: center;
+  position: relative;
+}
+
+section.undangan .title {
+  font-size: 35px;
+  line-height: 20px;
+  color: var(--primary-color);
+  font-family: "Great Vibes", cursive;
+  margin-bottom: 1em;
+}
+
+section.undangan p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--secondary-color);
+}
+
+section.footer {
+  margin-top: 200px;
+  padding-top: 2em;
+  text-align: center;
+  background-color: var(--primary-color);
+  padding-bottom: 1em;
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 2;
+}
+
+section.footer .card-footer {
+  padding: 1rem;
+  background-color: var(--bg-card-footer);
+  text-align: left;
+  margin: 0 1em;
+  border-radius: 4px;
+  position: absolute;
+  top: -50%;
+  -webkit-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.05), 0px -3px 3px rgba(208, 208, 208, 0.05);
+          box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.05), 0px -3px 3px rgba(208, 208, 208, 0.05);
+  border-top: none;
+}
+
+section.footer .card-footer .text-promo {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  text-transform: capitalize;
+  margin-bottom: 1em;
+  color: var(--primary-color);
+}
+
+section.footer .card-footer .cta-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+section.footer .card-footer .cta-buttons .btn-saya-mau {
+  padding: 0.4em 1.5em;
+  background-color: var(--primary-color);
+  border-radius: 4px;
+  margin-right: 1.5em;
+}
+
+section.footer .card-footer .cta-buttons .btn-saya-mau a {
+  color: #fbfaf8;
+}
+
+section.footer .card-footer .cta-buttons .btn-social-media {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+section.footer .card-footer .cta-buttons .btn-social-media img {
+  margin-right: 1.5em;
+}
+
+section.footer .di-buat-oleh p {
+  color: var(--text-createdBy);
+  font-size: 14px;
+  padding: 1em;
+  margin-bottom: 0;
+  margin-top: 4em;
+}
+
+section.footer .di-buat-oleh p img {
+  width: 100px;
+  height: 30px;
+  margin-left: 10px;
+}
+
+@media screen and (min-width: 576px) {
+  section.wedding-day::before {
+    top: -15%;
+    height: 130px;
+  }
+  section.wedding-day::after {
+    top: -13%;
+  }
+  .navigation-wedding {
+    width: 90%;
+  }
+  section.gallery .frame {
+    margin: 0;
+  }
+  section.gallery .frame::before {
+    height: 70px;
+    left: 4.5em;
+    top: -2.2em;
+  }
+  section.protokol-kesehatan img {
+    width: 80%;
+  }
+  section.protokol-kesehatan .information img {
+    width: 15%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #pembukaan .decoration .decoration-atas-kiri {
+    position: absolute !important;
+    top: 0 !important;
+    left: 4em !important;
+    -webkit-transform: scale(2, 2);
+            transform: scale(2, 2);
+  }
+  #pembukaan .decoration .decoration-atas-kanan {
+    position: absolute !important;
+    top: 6em !important;
+    right: 5em !important;
+    -webkit-transform: scale(2, 2) !important;
+            transform: scale(2, 2) !important;
+  }
+  #pembukaan .decoration .decoration-bawah-kiri {
+    position: absolute !important;
+    bottom: 5em !important;
+    left: 6em !important;
+    -webkit-transform: scale(2, 2) !important;
+            transform: scale(2, 2) !important;
+  }
+  #pembukaan .decoration .decoration-bawah-kanan {
+    position: absolute !important;
+    bottom: 3em !important;
+    right: 3em !important;
+    -webkit-transform: scale(2, 2) !important;
+            transform: scale(2, 2) !important;
+  }
+  #pembukaan .text-sambutan {
+    -webkit-transform: scale(1.5, 1.5);
+            transform: scale(1.5, 1.5);
+  }
+  #pembukaan .text-sambutan #our {
+    top: 0 !important;
+  }
+  #pembukaan .nama-mempelai {
+    font-size: 18px !important;
+    line-height: 17px;
+    letter-spacing: 0.1em;
+    color: #9f957e;
+    padding-top: 1em;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-top: 5em !important;
+  }
+  #pembukaan .btn-buka #btn-buka {
+    padding: 0.8em 1em;
+    border: 1px solid #c6ad76;
+    color: #f2f2f2;
+    border-radius: 30em;
+    background-color: #c6ad76;
+    font-size: 18px;
+  }
+  .play-music #icon-play {
+    width: 70px;
+  }
+  .tab-nav-container .tab {
+    margin: 0.5em 0.8em;
+  }
+  .tab-nav-container .tab svg {
+    height: 35px !important;
+    width: auto;
+  }
+  .tab-nav-container .tab p {
+    font-size: 18px;
+  }
+  section.wedding-day::before {
+    top: -30%;
+    height: 130px;
+  }
+  section.wedding-day::after {
+    top: -28%;
+  }
+  section.wedding-day p.hadist {
+    margin-top: -7em;
+  }
+  section.gallery .frame {
+    margin: 0;
+  }
+  section.gallery .frame::before {
+    height: 70px;
+    left: 4.5em;
+    top: -2.2em;
+  }
+  section.doa-mereka .card-doa {
+    margin: 0 2em;
+    padding: 2em;
+  }
+  section.doa-mereka .card-doa .owl-item img {
+    width: 70%;
+  }
+  section.doa-mereka .card-doa .nama-dan-doa p.nama {
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+  section.doa-mereka .card-doa .nama-dan-doa p.doa {
+    font-size: 18px;
+  }
+  section.konfirmasi-kedatangan form .row {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+    -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important;
+    -webkit-box-align: center !important;
+        -ms-flex-align: center !important;
+            align-items: center !important;
+  }
+  section.protokol-kesehatan img {
+    width: 80%;
+  }
+  section.protokol-kesehatan .information img {
+    width: 15%;
+  }
+  section.protokol-kesehatan .information .detail-info {
+    padding-left: 4em;
+  }
+  section.footer .card-footer {
+    background-color: #fbfaf8;
+    text-align: left;
+    margin: 0 1em;
+    border-radius: 4px;
+    position: absolute;
+    top: -50%;
+    -webkit-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.05), 0px -3px 3px rgba(208, 208, 208, 0.05);
+            box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.05), 0px -3px 3px rgba(208, 208, 208, 0.05);
+    border-top: none;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+    width: 80%;
+    padding: 2em;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #pembukaan .decoration .decoration-atas-kiri {
+    position: absolute !important;
+    top: 0 !important;
+    left: 4em !important;
+    -webkit-transform: scale(2, 2) !important;
+            transform: scale(2, 2) !important;
+  }
+  #pembukaan .decoration .decoration-atas-kanan {
+    position: absolute !important;
+    top: 6em !important;
+    right: 7em !important;
+    -webkit-transform: scale(2, 2) !important;
+            transform: scale(2, 2) !important;
+  }
+  #pembukaan .decoration .decoration-bawah-kiri {
+    position: absolute !important;
+    bottom: 5em !important;
+    left: 6em !important;
+    -webkit-transform: scale(2, 2) !important;
+            transform: scale(2, 2) !important;
+  }
+  #pembukaan .decoration .decoration-bawah-kanan {
+    position: absolute !important;
+    bottom: 3em !important;
+    right: 3em !important;
+    -webkit-transform: scale(2, 2) !important;
+            transform: scale(2, 2) !important;
+  }
+  #pembukaan .text-sambutan svg#our {
+    top: 0 !important;
+  }
+  .navigation-wedding {
+    width: 50%;
+  }
+  section.gallery .frame::before {
+    left: 10em;
+  }
+  .section.doa-mereka .card-doa {
+    margin: 0 3em !important;
+  }
+  section.protokol-kesehatan img {
+    width: 50%;
+  }
+  section.protokol-kesehatan .information img {
+    width: 10%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .navigation-wedding {
+    width: 50%;
+  }
+  #pembukaan .decoration .decoration-atas-kiri {
+    position: absolute !important;
+    top: 0 !important;
+    left: 4em !important;
+    -webkit-transform: scale(2, 2) !important;
+            transform: scale(2, 2) !important;
+  }
+  #pembukaan .decoration .decoration-atas-kanan {
+    position: absolute !important;
+    top: 6em !important;
+    -webkit-transform: scale(2, 2) !important;
+            transform: scale(2, 2) !important;
+  }
+  #pembukaan .decoration .decoration-bawah-kiri {
+    position: absolute !important;
+    bottom: 5em !important;
+    left: 6em !important;
+    -webkit-transform: scale(2, 2) !important;
+            transform: scale(2, 2) !important;
+  }
+  #pembukaan .decoration .decoration-bawah-kanan {
+    position: absolute !important;
+    bottom: 3em !important;
+    right: 3em !important;
+    -webkit-transform: scale(2, 2) !important;
+            transform: scale(2, 2) !important;
+  }
+  #pembukaan .text-sambutan svg#our {
+    top: 0 !important;
+  }
+  .save-the-date .waktu-dan-tempat {
+    float: right;
+  }
+  section > h1.title {
+    font-size: 55px !important;
+  }
+  section.wedding-day p.hadist {
+    font-size: 16px;
+  }
+  section.protokol-kesehatan .information .detail-info {
+    padding-left: 6em !important;
+  }
+}
+/*# sourceMappingURL=main.css.map */

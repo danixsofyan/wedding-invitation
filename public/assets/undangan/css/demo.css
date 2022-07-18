@@ -1,0 +1,1678 @@
+/* =================================================================== 
+ *  Knox Demo Stylesheet
+ *  Template Ver. 1.0.0
+ *  03-23-2021
+ *
+ * ------------------------------------------------------------------- */
+
+
+/* ===================================================================
+ * # SETTINGS
+ *
+ *
+ * ------------------------------------------------------------------- */
+
+/* ------------------------------------------------------------------- 
+ * ## fonts 
+ * ------------------------------------------------------------------- */
+ @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Marcellus&family=Gothic+A1:wght@300;400;500;600;700&display=fallback");
+
+ :root {
+     --font-1    : "Lora", serif;
+     --font-2    : "Gothic A1", sans-serif;
+     --font-3    : "Marcellus", serif;
+ 
+     /* monospace
+     */
+     --font-mono : Consolas, "Andale Mono", Courier, "Courier New", monospace;
+ }
+ 
+ /* ------------------------------------------------------------------- 
+  * ## colors
+  * ------------------------------------------------------------------- */
+ :root {
+ 
+     /* color-1(#5B5E53)
+      * color-2(#36151E)
+      * color-3(#FFE4AF)
+      */
+     --color-1                      : hsla(76, 6%, 35%, 1);
+     --color-2                      : hsla(344, 44%, 25%, 1);
+     --color-3                      : hsla(40, 100%, 75%, 1);
+ 
+     /* theme color variations
+      */
+     --color-1-lighter              : hsla(76, 6%, 55%, 1);
+     --color-1-light                : hsla(76, 6%, 45%, 1);
+     --color-1-dark                 : hsla(76, 6%, 25%, 1);
+     --color-1-darker               : hsla(76, 6%, 15%, 1);
+     --color-2-lighter              : hsla(344, 44%, 45%, 1);
+     --color-2-light                : hsla(344, 44%, 35%, 1);
+     --color-2-dark                 : hsla(344, 44%, 15%, 1);
+     --color-2-darker               : hsla(344, 44%, 5%, 1);
+     --color-3-lighter              : hsla(40, 100%, 97%, 1);
+     --color-3-light                : hsla(40, 100%, 85%, 1);
+     --color-3-dark                 : hsla(40, 100%, 65%, 1);
+     --color-3-darker               : hsla(40, 100%, 55%, 1);
+ 
+     /* feedback colors
+      * color-error(#ffd1d2), color-success(#c8e675), 
+      * color-info(#d7ecfb), color-notice(#fff099)
+      */
+     --color-error                  : hsla(359, 100%, 91%, 1);
+     --color-success                : hsla(76, 69%, 68%, 1);
+     --color-info                   : hsla(205, 82%, 91%, 1);
+     --color-notice                 : hsla(51, 100%, 80%, 1);
+     --color-error-content          : hsla(359, 50%, 50%, 1);
+     --color-success-content        : hsla(76, 29%, 28%, 1);
+     --color-info-content           : hsla(205, 32%, 31%, 1);
+     --color-notice-content         : hsla(51, 30%, 30%, 1);
+ 
+     /* shades 
+      * generated using 
+      * Tint & Shade Generator 
+      * (https://maketintsandshades.com/)
+      */
+     --color-black                  : #000000;
+     --color-gray-19                : #020202;
+     --color-gray-18                : #040404;
+     --color-gray-17                : #060607;
+     --color-gray-16                : #080809;
+     --color-gray-15                : #0a0b0b;
+     --color-gray-14                : #0c0d0d;
+     --color-gray-13                : #0e0f0f;
+     --color-gray-12                : #101112;
+     --color-gray-11                : #121314;
+     --color-gray-10                : #141516;
+     --color-gray-9                 : #2c2c2d;
+     --color-gray-8                 : #434445;
+     --color-gray-7                 : #5b5b5c;
+     --color-gray-6                 : #727373;
+     --color-gray-5                 : #8a8a8b;
+     --color-gray-4                 : #a1a1a2;
+     --color-gray-3                 : #b9b9b9;
+     --color-gray-2                 : #d0d0d0;
+     --color-gray-1                 : #e8e8e8;
+     --color-white                  : #ffffff;
+ 
+     /* text
+      */
+     --color-text-dark              : var(--color-black);
+     --color-text                   : var(--color-gray-10);
+     --color-text-light             : var(--color-gray-7);
+     --color-placeholder            : var(--color-gray-6);
+ 
+     /* buttons
+      */
+     --color-btn                    : var(--color-3-light);
+     --color-btn-text               : var(--color-black);
+     --color-btn-hover              : var(--color-3);
+     --color-btn-hover-text         : var(--color--black);
+     --color-btn-primary            : var(--color-1-dark);
+     --color-btn-primary-text       : var(--color-3-light);
+     --color-btn-primary-hover      : var(--color-1-darker);
+     --color-btn-primary-hover-text : var(--color-3-light);
+     --color-btn-stroke             : var(--color-1-darker);
+     --color-btn-stroke-text        : var(--color-black);
+     --color-btn-stroke-hover       : var(--color-1-darker);
+     --color-btn-stroke-hover-text  : var(--color-3-light);
+ 
+     /* preloader
+      */
+     --color-preloader-bg           : var(--color-gray-10);
+     --color-loader                 : white;
+     --color-loader-light           : rgba(255, 255, 255, 0.1);
+ 
+     /* others
+      */
+     --color-body                   : var(--color-3-lighter);
+     --color-border                 : rgba(0, 0, 0, .1);
+     --border-radius                : 3px;
+ }
+ 
+ /* ------------------------------------------------------------------- 
+  * ## spacing and typescale
+  * ------------------------------------------------------------------- */
+ :root {
+ 
+     /* spacing
+      * base font size: 20px 
+      * vertical space unit : 32px
+      */
+     --base-size        : 62.5%;
+     --multiplier       : 1;
+     --base-font-size   : calc(2rem * var(--multiplier));
+     --space            : calc(3.2rem * var(--multiplier));
+ 
+     /* vertical spacing 
+      */
+     --vspace-0_125     : calc(0.125 * var(--space));
+     --vspace-0_25      : calc(0.25 * var(--space));
+     --vspace-0_375     : calc(0.375 * var(--space));
+     --vspace-0_5       : calc(0.5 * var(--space));
+     --vspace-0_625     : calc(0.625 * var(--space));
+     --vspace-0_75      : calc(0.75 * var(--space));
+     --vspace-0_875     : calc(0.875 * var(--space));
+     --vspace-1         : calc(var(--space));
+     --vspace-1_25      : calc(1.25 * var(--space));
+     --vspace-1_5       : calc(1.5 * var(--space));
+     --vspace-1_75      : calc(1.75 * var(--space));
+     --vspace-2         : calc(2 * var(--space));
+     --vspace-2_5       : calc(2.5 * var(--space));
+     --vspace-3         : calc(3 * var(--space));
+     --vspace-3_5       : calc(3.5 * var(--space));
+     --vspace-4         : calc(4 * var(--space));
+     --vspace-4_5       : calc(4.5 * var(--space));
+     --vspace-5         : calc(5 * var(--space));
+ 
+     /* type scale
+      * ratio 1         :2 | base: 20px
+      * -------------------------------------------------------
+      *
+      * --text-display-3 = (86.00px)
+      * --text-display-2 = (71.66px)
+      * --text-display-1 = (59.72px)
+      * --text-xxxl      = (49.77px)
+      * --text-xxl       = (41.47px)
+      * --text-xl        = (34.56px)
+      * --text-lg        = (28.80px)
+      * --text-md        = (24.00px)
+      * --text-size      = (20.00px) BASE
+      * --text-sm        = (16.67px)
+      * --text-xs        = (13.89px)
+      *
+      * ---------------------------------------------------------
+      */
+     --text-scale-ratio : 1.2;
+     --text-size        : var(--base-font-size);
+     --text-xs          : calc((var(--text-size) / var(--text-scale-ratio)) / var(--text-scale-ratio));
+     --text-sm          : calc(var(--text-xs) * var(--text-scale-ratio));
+     --text-md          : calc(var(--text-sm) * var(--text-scale-ratio) * var(--text-scale-ratio));
+     --text-lg          : calc(var(--text-md) * var(--text-scale-ratio));
+     --text-xl          : calc(var(--text-lg) * var(--text-scale-ratio));
+     --text-xxl         : calc(var(--text-xl) * var(--text-scale-ratio));
+     --text-xxxl        : calc(var(--text-xxl) * var(--text-scale-ratio));
+     --text-display-1   : calc(var(--text-xxxl) * var(--text-scale-ratio));
+     --text-display-2   : calc(var(--text-display-1) * var(--text-scale-ratio));
+     --text-display-3   : calc(var(--text-display-2) * var(--text-scale-ratio));
+ 
+     /* default button height
+      */
+     --vspace-btn       : var(--vspace-2);
+ }
+ 
+ /* on mobile devices below 600px, change the value of '--multiplier' 
+  * to adjust the values of base font size and vertical space unit.
+  */
+ @media screen and (max-width: 600px) {
+     :root {
+         --multiplier : .875;
+     }
+ }
+ 
+ /* ------------------------------------------------------------------- 
+  * ## grid variables
+  * ------------------------------------------------------------------- */
+ :root {
+ 
+     /* widths for rows and containers
+      */
+     --width-full     : 100%;
+     --width-max      : 1200px;
+     --width-wide     : 1400px;
+     --width-wider    : 1600px;
+     --width-widest   : 1800px;
+     --width-narrow   : 1000px;
+     --width-narrower : 800px;
+     --width-grid-max : var(--width-max);
+ 
+     /* gutter
+      */
+     --gutter         : 2.4rem;
+ }
+ 
+ /* on medium screen devices
+  */
+ @media screen and (max-width: 1200px) {
+     :root {
+         --gutter : 1.8rem;
+     }
+ }
+ 
+ /* on mobile devices
+  */
+ @media screen and (max-width: 600px) {
+     :root {
+         --gutter : 1rem;
+     }
+ }
+
+
+/* ====================================================================
+ * # NORMALIZE
+ *
+ *
+ * --------------------------------------------------------------------
+ * normalize.css v8.0.1 | MIT License |
+ * github.com/necolas/normalize.css
+ * -------------------------------------------------------------------- */
+ html {
+    line-height              : 1.15;
+    -webkit-text-size-adjust : 100%;
+}
+
+body {
+    margin : 0;
+}
+
+main {
+    display : block;
+}
+
+h1 {
+    font-size : 2em;
+    margin    : 0.67em 0;
+}
+
+hr {
+    box-sizing : content-box;
+    height     : 0;
+    overflow   : visible;
+}
+
+pre {
+    font-family : monospace, monospace;
+    font-size   : 1em;
+}
+
+a {
+    background-color : transparent;
+}
+
+abbr[title] {
+    border-bottom   : none;
+    text-decoration : underline;
+    text-decoration : underline dotted;
+}
+
+b,
+strong {
+    font-weight : bolder;
+}
+
+code,
+kbd,
+samp {
+    font-family : monospace, monospace;
+    font-size   : 1em;
+}
+
+small {
+    font-size : 80%;
+}
+
+sub,
+sup {
+    font-size      : 75%;
+    line-height    : 0;
+    position       : relative;
+    vertical-align : baseline;
+}
+
+sub {
+    bottom : -0.25em;
+}
+
+sup {
+    top : -0.5em;
+}
+
+img {
+    border-style : none;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family : inherit;
+    font-size   : 100%;
+    line-height : 1.15;
+    margin      : 0;
+}
+
+button,
+input {
+    overflow : visible;
+}
+
+button,
+select {
+    text-transform : none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance : button;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+    border-style : none;
+    padding      : 0;
+}
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+    outline : 1px dotted ButtonText;
+}
+
+fieldset {
+    padding : 0.35em 0.75em 0.625em;
+}
+
+legend {
+    box-sizing  : border-box;
+    color       : inherit;
+    display     : table;
+    max-width   : 100%;
+    padding     : 0;
+    white-space : normal;
+}
+
+progress {
+    vertical-align : baseline;
+}
+
+textarea {
+    overflow : auto;
+}
+
+[type="checkbox"],
+[type="radio"] {
+    box-sizing : border-box;
+    padding    : 0;
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+    height : auto;
+}
+
+[type="search"] {
+    -webkit-appearance : textfield;
+    outline-offset     : -2px;
+}
+
+[type="search"]::-webkit-search-decoration {
+    -webkit-appearance : none;
+}
+
+::-webkit-file-upload-button {
+    -webkit-appearance : button;
+    font               : inherit;
+}
+
+details {
+    display : block;
+}
+
+summary {
+    display : list-item;
+}
+
+template {
+    display : none;
+}
+
+[hidden] {
+    display : none;
+}
+
+
+/* ===================================================================
+ * # BASE SETUP
+ *
+ *
+ * ------------------------------------------------------------------- */
+ html {
+    font-size  : var(--base-size);
+    box-sizing : border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing : inherit;
+}
+
+html,
+body {
+    height : 100%;
+}
+
+body {
+    background-color            : var(--color-body);
+    -webkit-overflow-scrolling  : touch;
+    -webkit-text-size-adjust    : 100%;
+    -webkit-tap-highlight-color : rgba(0, 0, 0, 0);
+    -webkit-font-smoothing      : antialiased;
+    -moz-osx-font-smoothing     : grayscale;
+}
+
+p {
+    font-size      : inherit;
+    text-rendering : optimizeLegibility;
+}
+
+a {
+    text-decoration : none;
+}
+
+svg,
+img,
+video {
+    max-width : 100%;
+    height    : auto;
+}
+
+pre {
+    overflow : auto;
+}
+
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+p,
+blockquote,
+th,
+td {
+    margin  : 0;
+    padding : 0;
+}
+
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea {
+    -webkit-appearance : none;
+    -moz-appearance    : none;
+    appearance         : none;
+}
+
+
+/* ===================================================================
+ * # GRID v4.0.0
+ *
+ *
+ *   -----------------------------------------------------------------
+ * - Grid breakpoints are based on MAXIMUM WIDTH media queries, 
+ *   meaning they apply to that one breakpoint and ALL THOSE BELOW IT.
+ * - Grid columns without a specified width will automatically layout 
+ *   as equal width columns.
+ *
+ * - BLOCK GRID columns(columns inside BLOCK GRID containers) are 
+ *   equally-sized columns define at parent/row level. 
+ *   A BLOCK GRID container's class attribute value begins with "block-".
+ *
+ * ------------------------------------------------------------------- */
+
+/* row 
+ */
+.row {
+    width     : 92%;
+    max-width : var(--width-grid-max);
+    margin    : 0 auto;
+    display   : flex;
+    flex-flow : row wrap;
+}
+
+.row .row {
+    width        : auto;
+    max-width    : none;
+    margin-left  : calc(var(--gutter) * -1);
+    margin-right : calc(var(--gutter) * -1);
+}
+
+/* column
+ */
+.column {
+    display : block;
+    flex    : 1 1 0%;
+    padding : 0 var(--gutter);
+}
+
+.collapse>.column,
+.column.collapse {
+    padding : 0;
+}
+
+/* row utility classes
+ */
+.row.row-wrap {
+    flex-wrap : wrap;
+}
+
+.row.row-nowrap {
+    flex-wrap : nowrap;
+}
+
+.row.row-y-top {
+    align-items : flex-start;
+}
+
+.row.row-y-bottom {
+    align-items : flex-end;
+}
+
+.row.row-y-center {
+    align-items : center;
+}
+
+.row.row-stretch {
+    align-items : stretch;
+}
+
+.row.row-baseline {
+    align-items : baseline;
+}
+
+.row.row-x-left {
+    justify-content : flex-start;
+}
+
+.row.row-x-right {
+    justify-content : flex-end;
+}
+
+.row.row-x-center {
+    justify-content : center;
+}
+
+/* --------------------------------------------------------------------
+ * ## large screen devices 
+ * -------------------------------------------------------------------- */
+.lg-1 {
+    flex  : none;
+    width : 8.33333%;
+}
+
+.lg-2 {
+    flex  : none;
+    width : 16.66667%;
+}
+
+.lg-3 {
+    flex  : none;
+    width : 25%;
+}
+
+.lg-4 {
+    flex  : none;
+    width : 33.33333%;
+}
+
+.lg-5 {
+    flex  : none;
+    width : 41.66667%;
+}
+
+.lg-6 {
+    flex  : none;
+    width : 50%;
+}
+
+.lg-7 {
+    flex  : none;
+    width : 58.33333%;
+}
+
+.lg-8 {
+    flex  : none;
+    width : 66.66667%;
+}
+
+.lg-9 {
+    flex  : none;
+    width : 75%;
+}
+
+.lg-10 {
+    flex  : none;
+    width : 83.33333%;
+}
+
+.lg-11 {
+    flex  : none;
+    width : 91.66667%;
+}
+
+.lg-12 {
+    flex  : none;
+    width : 100%;
+}
+
+.block-lg-one-eight>.column {
+    flex  : none;
+    width : 12.5%;
+}
+
+.block-lg-one-sixth>.column {
+    flex  : none;
+    width : 16.66667%;
+}
+
+.block-lg-one-fifth>.column {
+    flex  : none;
+    width : 20%;
+}
+
+.block-lg-one-fourth>.column {
+    flex  : none;
+    width : 25%;
+}
+
+.block-lg-one-third>.column {
+    flex  : none;
+    width : 33.33333%;
+}
+
+.block-lg-one-half>.column {
+    flex  : none;
+    width : 50%;
+}
+
+.block-lg-whole>.column {
+    flex  : none;
+    width : 100%;
+}
+
+/* --------------------------------------------------------------------
+ * ## medium screen devices 
+ * -------------------------------------------------------------------- */
+@media screen and (max-width: 1200px) {
+    .md-1 {
+        flex  : none;
+        width : 8.33333%;
+    }
+
+    .md-2 {
+        flex  : none;
+        width : 16.66667%;
+    }
+
+    .md-3 {
+        flex  : none;
+        width : 25%;
+    }
+
+    .md-4 {
+        flex  : none;
+        width : 33.33333%;
+    }
+
+    .md-5 {
+        flex  : none;
+        width : 41.66667%;
+    }
+
+    .md-6 {
+        flex  : none;
+        width : 50%;
+    }
+
+    .md-7 {
+        flex  : none;
+        width : 58.33333%;
+    }
+
+    .md-8 {
+        flex  : none;
+        width : 66.66667%;
+    }
+
+    .md-9 {
+        flex  : none;
+        width : 75%;
+    }
+
+    .md-10 {
+        flex  : none;
+        width : 83.33333%;
+    }
+
+    .md-11 {
+        flex  : none;
+        width : 91.66667%;
+    }
+
+    .md-12 {
+        flex  : none;
+        width : 100%;
+    }
+
+    .block-md-one-eight>.column {
+        flex  : none;
+        width : 12.5%;
+    }
+
+    .block-md-one-sixth>.column {
+        flex  : none;
+        width : 16.66667%;
+    }
+
+    .block-md-one-fifth>.column {
+        flex  : none;
+        width : 20%;
+    }
+
+    .block-md-one-fourth>.column {
+        flex  : none;
+        width : 25%;
+    }
+
+    .block-md-one-third>.column {
+        flex  : none;
+        width : 33.33333%;
+    }
+
+    .block-md-one-half>.column {
+        flex  : none;
+        width : 50%;
+    }
+
+    .block-md-whole>.column {
+        flex  : none;
+        width : 100%;
+    }
+
+    .hide-on-md {
+        display : none;
+    }
+}
+
+/* --------------------------------------------------------------------
+ * ## tablet devices 
+ * -------------------------------------------------------------------- */
+@media screen and (max-width: 800px) {
+    .tab-1 {
+        flex  : none;
+        width : 8.33333%;
+    }
+
+    .tab-2 {
+        flex  : none;
+        width : 16.66667%;
+    }
+
+    .tab-3 {
+        flex  : none;
+        width : 25%;
+    }
+
+    .tab-4 {
+        flex  : none;
+        width : 33.33333%;
+    }
+
+    .tab-5 {
+        flex  : none;
+        width : 41.66667%;
+    }
+
+    .tab-6 {
+        flex  : none;
+        width : 50%;
+    }
+
+    .tab-7 {
+        flex  : none;
+        width : 58.33333%;
+    }
+
+    .tab-8 {
+        flex  : none;
+        width : 66.66667%;
+    }
+
+    .tab-9 {
+        flex  : none;
+        width : 75%;
+    }
+
+    .tab-10 {
+        flex  : none;
+        width : 83.33333%;
+    }
+
+    .tab-11 {
+        flex  : none;
+        width : 91.66667%;
+    }
+
+    .tab-12 {
+        flex  : none;
+        width : 100%;
+    }
+
+    .block-tab-one-eight>.column {
+        flex  : none;
+        width : 12.5%;
+    }
+
+    .block-tab-one-sixth>.column {
+        flex  : none;
+        width : 16.66667%;
+    }
+
+    .block-tab-one-fifth>.column {
+        flex  : none;
+        width : 20%;
+    }
+
+    .block-tab-one-fourth>.column {
+        flex  : none;
+        width : 25%;
+    }
+
+    .block-tab-one-third>.column {
+        flex  : none;
+        width : 33.33333%;
+    }
+
+    .block-tab-one-half>.column {
+        flex  : none;
+        width : 50%;
+    }
+
+    .block-tab-whole>.column {
+        flex  : none;
+        width : 100%;
+    }
+
+    .hide-on-tab {
+        display : none;
+    }
+}
+
+/* --------------------------------------------------------------------
+ * ## mobile devices 
+ * -------------------------------------------------------------------- */
+@media screen and (max-width: 600px) {
+    .row {
+        width         : 100%;
+        padding-left  : 6vw;
+        padding-right : 6vw;
+    }
+
+    .row .row {
+        padding-left  : 0;
+        padding-right : 0;
+    }
+
+    .mob-1 {
+        flex  : none;
+        width : 8.33333%;
+    }
+
+    .mob-2 {
+        flex  : none;
+        width : 16.66667%;
+    }
+
+    .mob-3 {
+        flex  : none;
+        width : 25%;
+    }
+
+    .mob-4 {
+        flex  : none;
+        width : 33.33333%;
+    }
+
+    .mob-5 {
+        flex  : none;
+        width : 41.66667%;
+    }
+
+    .mob-6 {
+        flex  : none;
+        width : 50%;
+    }
+
+    .mob-7 {
+        flex  : none;
+        width : 58.33333%;
+    }
+
+    .mob-8 {
+        flex  : none;
+        width : 66.66667%;
+    }
+
+    .mob-9 {
+        flex  : none;
+        width : 75%;
+    }
+
+    .mob-10 {
+        flex  : none;
+        width : 83.33333%;
+    }
+
+    .mob-11 {
+        flex  : none;
+        width : 91.66667%;
+    }
+
+    .mob-12 {
+        flex  : none;
+        width : 100%;
+    }
+
+    .block-mob-one-eight>.column {
+        flex  : none;
+        width : 12.5%;
+    }
+
+    .block-mob-one-sixth>.column {
+        flex  : none;
+        width : 16.66667%;
+    }
+
+    .block-mob-one-fifth>.column {
+        flex  : none;
+        width : 20%;
+    }
+
+    .block-mob-one-fourth>.column {
+        flex  : none;
+        width : 25%;
+    }
+
+    .block-mob-one-third>.column {
+        flex  : none;
+        width : 33.33333%;
+    }
+
+    .block-mob-one-half>.column {
+        flex  : none;
+        width : 50%;
+    }
+
+    .block-mob-whole>.column {
+        flex  : none;
+        width : 100%;
+    }
+
+    .hide-on-mob {
+        display : none;
+    }
+}
+
+/* --------------------------------------------------------------------
+ * ## small screen devices 
+ * --------------------------------------------------------------------*/
+
+/* stack columns on small screen devices
+ */
+@media screen and (max-width: 400px) {
+    .row .row {
+        margin-left  : 0;
+        margin-right : 0;
+    }
+
+    .block-stack>.column,
+    .column {
+        flex         : none;
+        width        : 100%;
+        margin-left  : 0;
+        margin-right : 0;
+        padding      : 0;
+    }
+
+    .hide-on-sm {
+        display : none;
+    }
+}
+
+
+/* ===================================================================
+ * # UTILITY CLASSES
+ *
+ *
+ * ------------------------------------------------------------------- */
+
+/* flex item alignment classes
+ */
+ .u-flexitem-center {
+    margin     : auto;
+    align-self : center;
+}
+
+.u-flexitem-left {
+    margin-right : auto;
+    align-self   : center;
+}
+
+.u-flexitem-right {
+    margin-left : auto;
+    align-self  : center;
+}
+
+.u-flexitem-x-center {
+    margin-right : auto;
+    margin-left  : auto;
+}
+
+.u-flexitem-x-left {
+    margin-right : auto;
+}
+
+.u-flexitem-x-right {
+    margin-left : auto;
+}
+
+.u-flexitem-y-center {
+    align-self : center;
+}
+
+.u-flexitem-y-top {
+    align-self : flex-start;
+}
+
+.u-flexitem-y-bottom {
+    align-self : flex-end;
+}
+
+/* misc helper classes
+ */
+.u-clearfix:after {
+    content : "";
+    display : table;
+    clear   : both;
+}
+
+.u-hidden {
+    display : none;
+}
+
+.u-invisible {
+    visibility : hidden;
+}
+
+.u-antialiased {
+    -webkit-font-smoothing  : antialiased;
+    -moz-osx-font-smoothing : grayscale;
+}
+
+.u-overflow-hidden {
+    overflow : hidden;
+}
+
+.u-remove-top {
+    margin-top : 0;
+}
+
+.u-remove-bottom {
+    margin-bottom : 0;
+}
+
+.u-add-half-bottom {
+    margin-bottom : var(--vspace-0_5);
+}
+
+.u-add-bottom {
+    margin-bottom : var(--vspace-1);
+}
+
+.u-no-border {
+    border : none;
+}
+
+.u-fullwidth {
+    width : 100%;
+}
+
+.u-pull-left {
+    float : left;
+}
+
+.u-pull-right {
+    float : right;
+}
+
+
+/* ===================================================================
+ * # PRELOADER
+ * 
+ * 
+ * -------------------------------------------------------------------
+ * - markup:
+ *
+ * <div id="preloader">
+ *     <div id="loader" class="dots-fade">
+ *         <div></div>
+ *         <div></div>
+ *         <div></div>
+ *     </div>
+ * </div>
+ *
+ * - loader class:
+ * <dots-fade | dots-jump | dots-pulse>
+ *
+ * ------------------------------------------------------------------- */
+#preloader {
+    position        : fixed;
+    display         : flex;
+    flex-flow       : row wrap;
+    justify-content : center;
+    align-items     : center;
+    background      : var(--color-preloader-bg);
+    z-index         : 500;
+    height          : 100vh;
+    width           : 100%;
+    opacity         : 1;
+    overflow        : hidden;
+}
+
+.no-js #preloader {
+    display : none;
+}
+
+#loader {
+    position : relative;
+    width    : 6px;
+    height   : 6px;
+    padding  : 0;
+    display  : inline-block;
+}
+
+#loader>div {
+    content       : "";
+    background    : var(--color-loader);
+    width         : 4px;
+    height        : 4px;
+    position      : absolute;
+    top           : 0;
+    left          : 0;
+    border-radius : 50%;
+}
+
+#loader>div:nth-of-type(1) {
+    left : 15px;
+}
+
+#loader>div:nth-of-type(3) {
+    left : -15px;
+}
+
+/* dots jump */
+.dots-jump>div {
+    -webkit-animation : dots-jump 1.2s infinite ease;
+    animation         : dots-jump 1.2s infinite ease;
+    animation-delay   : 0.2s;
+}
+
+.dots-jump>div:nth-of-type(1) {
+    animation-delay : 0.4s;
+}
+
+.dots-jump>div:nth-of-type(3) {
+    animation-delay : 0s;
+}
+
+@-webkit-keyframes dots-jump {
+    0% {
+        top : 0;
+    }
+
+    40% {
+        top : -6px;
+    }
+
+    80% {
+        top : 0;
+    }
+}
+
+@keyframes dots-jump {
+    0% {
+        top : 0;
+    }
+
+    40% {
+        top : -6px;
+    }
+
+    80% {
+        top : 0;
+    }
+}
+
+/* dots fade */
+.dots-fade>div {
+    -webkit-animation : dots-fade 1.6s infinite ease;
+    animation         : dots-fade 1.6s infinite ease;
+    animation-delay   : 0.4s;
+}
+
+.dots-fade>div:nth-of-type(1) {
+    animation-delay : 0.8s;
+}
+
+.dots-fade>div:nth-of-type(3) {
+    animation-delay : 0s;
+}
+
+@-webkit-keyframes dots-fade {
+    0% {
+        opacity : 1;
+    }
+
+    40% {
+        opacity : 0.2;
+    }
+
+    80% {
+        opacity : 1;
+    }
+}
+
+@keyframes dots-fade {
+    0% {
+        opacity : 1;
+    }
+
+    40% {
+        opacity : 0.2;
+    }
+
+    80% {
+        opacity : 1;
+    }
+}
+
+/* dots pulse */
+.dots-pulse>div {
+    -webkit-animation : dots-pulse 1.2s infinite ease;
+    animation         : dots-pulse 1.2s infinite ease;
+    animation-delay   : 0.2s;
+}
+
+.dots-pulse>div:nth-of-type(1) {
+    animation-delay : 0.4s;
+}
+
+.dots-pulse>div:nth-of-type(3) {
+    animation-delay : 0s;
+}
+
+@-webkit-keyframes dots-pulse {
+    0% {
+        -webkit-transform : scale(1);
+        transform         : scale(1);
+    }
+
+    40% {
+        -webkit-transform : scale(1.1);
+        transform         : scale(1.3);
+    }
+
+    80% {
+        -webkit-transform : scale(1);
+        transform         : scale(1);
+    }
+}
+
+@keyframes dots-pulse {
+    0% {
+        transform : scale(1);
+    }
+
+    40% {
+        transform : scale(1.3);
+    }
+
+    80% {
+        transform : scale(1);
+    }
+}
+
+/* ------------------------------------------------------------------- 
+ * ## page loaded
+ * ------------------------------------------------------------------- */
+.ss-loaded #preloader {
+    opacity                    : 0;
+    visibility                 : hidden;
+    transition-property        : opacity, visibility;
+    transition-duration        : .9s;
+    transition-delay           : .9s;
+    transition-timing-function : ease-in-out;
+}
+
+.ss-loaded #preloader #loader {
+    opacity    : 0;
+    transition : opacity .9s ease-in-out;
+}
+
+
+/* ===================================================================
+ * # TYPOGRAPHY
+ *
+ *
+ * ------------------------------------------------------------------- */
+body {
+    font-family      : var(--font-1);
+    font-size        : var(--base-font-size);
+    font-weight      : 400;
+    line-height      : var(--vspace-1);
+    background-color : var(--color-preloader-bg);
+    color            : var(--color-gray-5);
+}
+
+/* links
+ */
+a {
+    color      : white;
+    transition : all 0.3s ease-in-out;
+}
+
+a:focus,
+a:hover,
+a:active {
+    color : var(--color-3-light);
+}
+
+a:hover,
+a:active {
+    outline : 0;
+}
+
+/* headings
+ */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family            : var(--font-2);
+    font-weight            : 500;
+    color                  : white;
+    font-variant-ligatures : common-ligatures;
+    text-rendering         : optimizeLegibility;
+}
+
+h1, .h1 {
+    margin-top    : var(--vspace-2);
+    margin-bottom : var(--vspace-0_75);
+}
+
+h2, .h2,
+h3, .h3,
+h4, .h4 {
+    margin-top    : var(--vspace-1_5);
+    margin-bottom : var(--vspace-0_5);
+}
+
+h5, .h5,
+h6, .h6 {
+    margin-top    : var(--vspace-1_25);
+    margin-bottom : var(--vspace-0_5);
+}
+
+h1, .h1 {
+    font-size      : var(--text-display-1);
+    line-height    : var(--vspace-2);
+    letter-spacing : -.015em;
+}
+
+@media screen and (max-width: 500px) {
+
+    h1, .h1 {
+        font-size   : var(--text-xxxl);
+        line-height : calc(1.625 * var(--space));
+    }
+}
+
+h2, .h2 {
+    font-size      : var(--text-xxl);
+    line-height    : var(--vspace-1_5);
+    letter-spacing : -.015em;
+}
+
+h3, .h3 {
+    font-size   : var(--text-xl);
+    line-height : var(--vspace-1_25);
+}
+
+h4, .h4 {
+    font-size   : var(--text-lg);
+    line-height : var(--vspace-1);
+}
+
+h5, .h5 {
+    font-size   : var(--text-md);
+    line-height : var(--vspace-0_875);
+}
+
+h6, .h6 {
+    font-size      : var(--text-sm);
+    font-weight    : 600;
+    line-height    : var(--vspace-0_75);
+    text-transform : uppercase;
+    letter-spacing : .2rem;
+}
+
+/* emphasis, italic,
+ * strong, bold and small text
+ */
+em,
+i,
+strong,
+b {
+    font-size   : inherit;
+    line-height : inherit;
+}
+
+em,
+i {
+    font-style : italic;
+}
+
+strong,
+b {
+    font-weight : 600;
+    color       : var(--color-text-dark);
+}
+
+small {
+    font-size   : 80%;
+    font-weight : 400;
+    line-height : var(--vspace-0_5);
+}
+
+
+/* ===================================================================
+ * #LAYOUT
+ *
+ *
+ * ------------------------------------------------------------------- */
+
+/* header
+ */
+header {
+    text-align    : center;
+    padding       : var(--vspace-1_25) 0 var(--vspace-1_5);
+    margin-bottom : var(--vspace-1_5);
+    position      : relative;
+}
+
+header::after {
+    content    : "";
+    width      : 300px;
+    height     : 1px;
+    background : rgba(255, 255, 255, 0.05);
+    transform  : translateX(-50%);
+    position   : absolute;
+    bottom     : 0;
+    left       : 50%;
+}
+
+header .row {
+    max-width : 900px;
+}
+
+@media screen and (max-width: 1200px) {
+    header .row {
+        max-width : 700px;
+    }
+}
+
+header h1 {
+    font-family    : var(--font-3);
+    font-size      : var(--text-xxl);
+    line-height    : var(--vspace-1_5);
+    text-transform : uppercase;
+    letter-spacing : .3em;
+    margin-bottom  : var(--vspace-0_75);
+}
+
+/* responsive:
+ * header 
+ */
+@media screen and (max-width: 600px) {
+    header::after {
+        width : 150px;
+    }
+
+    header h1 {
+        font-size   : var(--text-xl);
+        line-height : var(--vspace-1_25);
+    }
+}
+
+/* main
+ */
+main {
+    text-align     : center;
+    padding-bottom : var(--vspace-2_5);
+}
+
+main .row {
+    max-width : 1160px;
+}
+
+main .column {
+    margin-bottom : var(--vspace-1);
+}
+
+main .entry__thumb {
+    position : relative;
+    overflow : hidden;
+}
+
+main .entry__thumb a {
+    display : block;
+}
+
+main .entry__thumb a img {
+    vertical-align : bottom;
+}
+
+main .entry__thumb a::before {
+    z-index    : 1;
+    content    : "";
+    display    : block;
+    background : rgba(0, 0, 0, 0.8);
+    opacity    : 0;
+    visibility : hidden;
+    position   : absolute;
+    top        : 0;
+    left       : 0;
+    right      : 0;
+    bottom     : 0;
+    width      : 100%;
+    height     : 100%;
+    transition : all .3s;
+}
+
+main .entry__thumb a::after {
+    content        : "...";
+    font-family    : var(--font-1);
+    font-weight    : 300;
+    font-size      : var(--text-md);
+    z-index        : 1;
+    display        : block;
+    height         : 30px;
+    width          : 30px;
+    letter-spacing : -1px;
+    line-height    : 30px;
+    margin-left    : -15px;
+    margin-top     : -30px;
+    position       : absolute;
+    left           : 50%;
+    top            : 50%;
+    text-align     : center;
+    color          : white;
+    opacity        : 0;
+    visibility     : hidden;
+    transform      : scale(0.5);
+    transition     : all .3s;
+}
+
+main .entry__thumb:hover a::before {
+    opacity    : 1;
+    visibility : visible;
+}
+
+main .entry__thumb:hover a::after {
+    opacity    : 1;
+    visibility : visible;
+    transform  : scale(1);
+}
+
+main .entry__title {
+    padding-top : var(--vspace-0_75);
+}
+
+main .entry__title h3 {
+    font-size   : var(--text-sm);
+    line-height : var(--vspace-0_75);
+    margin-top  : 0;
+}
+
+/* responsive:
+ * main
+ */
+@media screen and (max-width: 1200px) {
+    main .row {
+        max-width : 900px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    main .row {
+        max-width : 500px;
+    }
+}

@@ -27,7 +27,7 @@ class WeddingResource extends Resource
             ->schema([
                 Forms\Components\card::make()->schema([
                     Forms\Components\TextInput::make('name')->required(),
-                    Forms\Components\TextInput::make('note')->required(),
+                    Forms\Components\MarkdownEditor::make('note')->label('Tagline')->required(),
                     Forms\Components\Select::make('status')->required()
                     ->options([
                         'Active' => 'Active',
