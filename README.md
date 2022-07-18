@@ -26,8 +26,13 @@ npm install && npm run dev
 php artisan migrate:fresh --seed
 php artisan serve
 ```
+### landing page with guest name
+http://undangan.test/?to=Dani+Sofyan
 
 ### login
+```bash
 http://undangan.test/admin
-E : danixsofyan@gmail.com
+E : admin@undangan.io
 P : 123qweasd
+```
+
