@@ -36,3 +36,10 @@ E : admin@undangan.io
 P : 123qweasd
 ```
 
+### DEMO
+http://undangan.digdaya.tech/?to=Dani+Sofyan
+```bash
+http://undangan.digdaya.tech/admin
+E : admin@undangan.io
+P : 123qweasd
+```
