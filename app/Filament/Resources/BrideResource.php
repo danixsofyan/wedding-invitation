@@ -32,6 +32,7 @@ class BrideResource extends Resource
                 Forms\Components\card::make()->schema([
                     Forms\Components\BelongsToSelect::make('wedding_id')->label('Wedding')->relationship('wedding', 'name'),
                     Forms\Components\TextInput::make('name')->required(),
+                    Forms\Components\TextInput::make('child')->name('anak ke')->required(),
                     Forms\Components\TextInput::make('name_father')->required(),
                     Forms\Components\TextInput::make('name_mother')->required(),
                     Forms\Components\TextInput::make('instagram')->required(),

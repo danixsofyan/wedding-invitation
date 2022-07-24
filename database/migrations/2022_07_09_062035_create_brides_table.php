@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('wedding_id')->constrained()->onDelete('cascade');
             $table->string('name');
+            $table->string('child');
             $table->string('name_father');
             $table->string('name_mother');
             $table->string('instagram');

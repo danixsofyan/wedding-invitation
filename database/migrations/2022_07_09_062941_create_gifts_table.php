@@ -18,8 +18,8 @@ return new class extends Migration
             $table->foreignId('wedding_id')->constrained()->onDelete('cascade');
             $table->string('name');
             $table->text('address');
-            $table->text('maps');
-            $table->text('note');
+            $table->text('maps')->nullable();
+            $table->text('note')->nullable();
             $table->timestamps();
         });
     }

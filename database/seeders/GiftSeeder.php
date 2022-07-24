@@ -16,10 +16,9 @@ class GiftSeeder extends Seeder
     {
         Gift::create([
             'wedding_id'        => 1,
-            'name'              => 'Rumah di Bandung',
-            'address'           => 'Jl. Sari Asih No.54, Sarijadi, Kec. Sukasari, Kota Bandung, Jawa Barat 40151',
+            'name'              => 'Rumah Fini',
+            'address'           => 'Puskopad, Jalan Garuda III Blok b No.31,. Ciseureuh, Purwakarta PURWAKARTA, KAB. PURWAKARTA, JAWA BARAT, ID 41118',
             'maps'              => 'https://goo.gl/maps/1abtBDs2c71h5Nx56',
-            'note'              => 'Dekat Poltekpos',
             'created_at'        => now(),
             'updated_at'        => now()
         ]);

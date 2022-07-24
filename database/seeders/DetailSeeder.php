@@ -18,9 +18,9 @@ class DetailSeeder extends Seeder
         Detail::create([
             'wedding_id'        => 1,
             'type'              => 'Akad',
-            'date'              => '2022-11-14 08:00:00',
-            'address'           => 'Gedung UPI Purwakarta Jl. Veteran No.8, Nagri Kaler, Kec. Purwakarta, Kabupaten Purwakarta, Jawa Barat 41115',
-            'maps'              => 'https://goo.gl/maps/wDSU5gdyqNvyWpE2A',
+            'date'              => '2022-11-05 08:00:00',
+            'address'           => 'Kampus 1 Jl. Cikopak No. 52, Sadang-Purwakarta',
+            'maps'              => 'https://goo.gl/maps/roJzQSwoyMVUgBFc7',
             'created_at'        => now(),
             'updated_at'        => now()
         ]);
@@ -28,9 +28,9 @@ class DetailSeeder extends Seeder
         Detail::create([
             'wedding_id'        => 1,
             'type'              => 'Resepsi',
-            'date'              => '2022-11-14 08:00:00',
-            'address'           => 'Gedung UPI Purwakarta Jl. Veteran No.8, Nagri Kaler, Kec. Purwakarta, Kabupaten Purwakarta, Jawa Barat 41115',
-            'maps'              => 'https://goo.gl/maps/wDSU5gdyqNvyWpE2A',
+            'date'              => '2022-11-05 10:00:00',
+            'address'           => 'Kampus 1 Jl. Cikopak No. 52, Sadang-Purwakarta',
+            'maps'              => 'https://goo.gl/maps/roJzQSwoyMVUgBFc7',
             'created_at'        => now(),
             'updated_at'        => now()
         ]);

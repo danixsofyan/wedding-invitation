@@ -27,9 +27,10 @@ class GiftResource extends Resource
             ->schema([
                 Forms\Components\card::make()->schema([
                     Forms\Components\BelongsToSelect::make('wedding_id')->label('Wedding')->relationship('wedding', 'name'),
+                    Forms\Components\TextInput::make('name')->required(),
                     Forms\Components\TextInput::make('address')->required(),
-                    Forms\Components\TextInput::make('maps')->required(),
-                    Forms\Components\TextInput::make('note')->required(),
+                    Forms\Components\TextInput::make('maps'),
+                    Forms\Components\TextInput::make('note')->name('patokan'),
                 ])
             ]);
     }

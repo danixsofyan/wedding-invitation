@@ -196,12 +196,12 @@
                                         <br>
                                         <img src="{{ $item->photo }}" style="height:500px; widht:auto;">
                                         <p class="desc-bride">
-                                        Anak dari dari
+                                            {{ $item->child }}
                                         </p>
                                         <p>
-                                        Bapak {{ $item->name_father }}
-                                        &
-                                        Ibu {{ $item->name_mother }}
+                                            {{ $item->name_mother }}
+                                            &<br>
+                                            {{ $item->name_father }}
                                         </p>
                                     </div>
                                     @endforeach
@@ -308,7 +308,7 @@
                                         <p>
                                             {{ $item->address }}
                                             <br>
-                                            (Patokan : {{ $item->note }})
+                                            @if(!$item->note) @else  Patokan : {{ $item->note }} @endif
                                             <br>
                                             <a href="{{ $item->maps }}">{{ $item->maps }}</a>
                                         </p>

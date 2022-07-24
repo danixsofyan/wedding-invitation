@@ -46,7 +46,7 @@ class User extends Authenticatable implements FilamentUser
 
     public function canAccessFilament(): bool
     {
-        $user = User::select('users.id','users.email')->join('model_has_roles', 'users.id', 'model_id')->where('role_id', 1)->get();
+        $user = User::select('*')->join('model_has_roles', 'users.id', 'model_id')->where('role_id', 1)->get();
         foreach($user as $item){
             return ($this->email === $item->email) && $this->hasVerifiedEmail();
         }

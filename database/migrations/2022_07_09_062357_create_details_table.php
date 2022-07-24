@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('details', function (Blueprint $table) {
             $table->id();
-            $table->integer('wedding_id');
+            $table->foreignId('wedding_id')->constrained()->onDelete('cascade');
             $table->enum('type', ['Akad', 'Resepsi', 'Ngunduh Mantu']);
             $table->dateTime('date');
             $table->text('address');
