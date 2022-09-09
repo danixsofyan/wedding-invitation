@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b93941c6dece40372a7209fa05208eb5",
+    "content-hash": "74d04158d7cf54af1ee3b4aaea781c08",
     "packages": [
         {
             "name": "akaunting/laravel-money",
@@ -3492,6 +3492,141 @@
             "time": "2022-03-27T21:42:02+00:00"
         },
         {
+            "name": "spatie/commonmark-shiki-highlighter",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/commonmark-shiki-highlighter.git",
+                "reference": "63263717961350bbfe974b44312fcef9ceb182fa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/commonmark-shiki-highlighter/zipball/63263717961350bbfe974b44312fcef9ceb182fa",
+                "reference": "63263717961350bbfe974b44312fcef9ceb182fa",
+                "shasum": ""
+            },
+            "require": {
+                "league/commonmark": "^2.0",
+                "php": "^8.0",
+                "spatie/shiki-php": "^1.1.1",
+                "symfony/process": "^5.3|^6.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.19",
+                "phpunit/phpunit": "^9.5",
+                "spatie/phpunit-snapshot-assertions": "^4.2.7",
+                "spatie/ray": "^1.28"
+            },
+            "type": "commonmark-extension",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\CommonMarkShikiHighlighter\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Highlight code blocks with league/commonmark and Shiki",
+            "homepage": "https://github.com/spatie/commonmark-shiki-highlighter",
+            "keywords": [
+                "commonmark-shiki-highlighter",
+                "spatie"
+            ],
+            "support": {
+                "source": "https://github.com/spatie/commonmark-shiki-highlighter/tree/2.1.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-01-13T10:04:12+00:00"
+        },
+        {
+            "name": "spatie/laravel-markdown",
+            "version": "2.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-markdown.git",
+                "reference": "fbc1932b9513f4ee3ec83ac00537d92c188fc3cb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-markdown/zipball/fbc1932b9513f4ee3ec83ac00537d92c188fc3cb",
+                "reference": "fbc1932b9513f4ee3ec83ac00537d92c188fc3cb",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/cache": "^8.49|^9.0",
+                "illuminate/contracts": "^8.37|^9.0",
+                "illuminate/support": "^8.49|^9.0",
+                "illuminate/view": "^8.49|^9.0",
+                "league/commonmark": "^2.2",
+                "php": "^8.0",
+                "spatie/commonmark-shiki-highlighter": "^2.0",
+                "spatie/laravel-package-tools": "^1.4.3"
+            },
+            "require-dev": {
+                "brianium/paratest": "^6.2",
+                "nunomaduro/collision": "^5.3|^6.0",
+                "orchestra/testbench": "^6.15|^7.0",
+                "phpunit/phpunit": "^9.3",
+                "spatie/laravel-ray": "^1.23",
+                "spatie/phpunit-snapshot-assertions": "^4.2",
+                "vimeo/psalm": "^4.8"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\LaravelMarkdown\\MarkdownServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\LaravelMarkdown\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A highly configurable markdown renderer and Blade component for Laravel",
+            "homepage": "https://github.com/spatie/laravel-markdown",
+            "keywords": [
+                "Laravel-Markdown",
+                "laravel",
+                "spatie"
+            ],
+            "support": {
+                "source": "https://github.com/spatie/laravel-markdown/tree/2.2.4"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-05-21T11:53:53+00:00"
+        },
+        {
             "name": "spatie/laravel-package-tools",
             "version": "1.12.1",
             "source": {
@@ -3631,6 +3766,69 @@
                 }
             ],
             "time": "2022-06-29T23:11:42+00:00"
+        },
+        {
+            "name": "spatie/shiki-php",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/shiki-php.git",
+                "reference": "34fe61405b405c735c82a9c56feffd3f7c5544ff"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/shiki-php/zipball/34fe61405b405c735c82a9c56feffd3f7c5544ff",
+                "reference": "34fe61405b405c735c82a9c56feffd3f7c5544ff",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^v3.0",
+                "pestphp/pest": "^1.8",
+                "phpunit/phpunit": "^9.5",
+                "spatie/pest-plugin-snapshots": "^1.1",
+                "spatie/ray": "^1.10"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\ShikiPhp\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rias Van der Veken",
+                    "email": "rias@spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Highlight code using Shiki in PHP",
+            "homepage": "https://github.com/spatie/shiki-php",
+            "keywords": [
+                "shiki",
+                "spatie"
+            ],
+            "support": {
+                "source": "https://github.com/spatie/shiki-php/tree/1.3.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-06-01T11:28:41+00:00"
         },
         {
             "name": "symfony/console",

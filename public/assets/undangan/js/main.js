@@ -13,9 +13,9 @@
     const cfg = {
 
         // Countdown Timer Final Date
-        finalDate : 'December 04, 2025 00:00:00',
+        finalDate : 'November 05, 2022 09:00:00',
         // MailChimp URL
-        mailChimpURL : 'https://facebook.us1.list-manage.com/subscribe/post?u=1abf75f6981256963a47d197a&amp;id=37c6d8f4d6' 
+        mailChimpURL : 'https://facebook.us1.list-manage.com/subscribe/post?u=1abf75f6981256963a47d197a&amp;id=37c6d8f4d6'
 
     };
 
@@ -81,7 +81,7 @@
             let diff = finalDate - now;
 
             if (diff <= 0) {
-                if (timeInterval) { 
+                if (timeInterval) {
                     clearInterval(timeInterval);
                 }
                 return;
@@ -95,7 +95,7 @@
             if (days <= 99) {
                 if (days <= 9) {
                     days = '00' + days;
-                } else { 
+                } else {
                     days = '0' + days;
                 }
             }
@@ -118,7 +118,7 @@
 
 
    /* Modal
-    * ---------------------------------------------------- */ 
+    * ---------------------------------------------------- */
     const ssModal = function() {
 
         const modal = document.querySelector('.ss-modal');
@@ -148,11 +148,11 @@
         window.addEventListener('click', windowOnClick);
         window.addEventListener('keyup', pressEsc);
 
-    }; 
+    };
 
 
    /* Swiper
-    * ------------------------------------------------------ */ 
+    * ------------------------------------------------------ */
     const ssSwiper = function() {
 
         const mySwiper = new Swiper('.swiper-container', {
@@ -170,7 +170,7 @@
 
 
    /* MailChimp Form
-    * ---------------------------------------------------- */ 
+    * ---------------------------------------------------- */
     const ssMailChimpForm = function() {
 
         const mcForm = document.querySelector('#mc-form');
@@ -252,7 +252,7 @@
             mcStatus.classList.add('success-message');
         };
 
-        // Submit the form 
+        // Submit the form
         function submitMailChimpForm(form) {
 
             let url = cfg.mailChimpURL;
@@ -306,7 +306,7 @@
 
 
    /* Tabs
-    * ---------------------------------------------------- */ 
+    * ---------------------------------------------------- */
     const sstabs = function(nextTab = false) {
 
         const tabList = document.querySelector('.tab-nav__list');
@@ -317,7 +317,7 @@
         if (!(tabList && tabPanels)) return;
 
         const tabClickEvent = function(tabLink, tabLinks, tabPanels, linkIndex, e) {
-    
+
             // Reset all the tablinks
             tabLinks.forEach(function(link) {
                 link.setAttribute('tabindex', '-1');
@@ -325,13 +325,13 @@
                 link.parentNode.removeAttribute('data-tab-active');
                 link.removeAttribute('data-tab-active');
             });
-    
+
             // set the active link attributes
             tabLink.setAttribute('tabindex', '0');
             tabLink.setAttribute('aria-selected', 'true');
             tabLink.parentNode.setAttribute('data-tab-active', '');
             tabLink.setAttribute('data-tab-active', '');
-    
+
             // Change tab panel visibility
             tabPanels.forEach(function(panel, index) {
                 if (index != linkIndex) {
@@ -346,7 +346,7 @@
             window.dispatchEvent(new Event("resize"));
 
         };
-    
+
         const keyboardEvent = function(tabLink, tabLinks, tabPanels, tabItems, index, e) {
 
             let keyCode = e.keyCode;
@@ -355,24 +355,24 @@
             let nextTab = tabLinks[index + 1];
             let firstTab = tabLinks[0];
             let lastTab = tabLinks[tabLinks.length - 1];
-    
+
             // ArrowRight and ArrowLeft are the values when event.key is supported
             switch (keyCode) {
                 case 'ArrowLeft':
                 case 37:
                     e.preventDefault();
-    
+
                     if (!previousTab) {
                         lastTab.focus();
                     } else {
                         previousTab.focus();
                     }
                     break;
-    
+
                 case 'ArrowRight':
                 case 39:
                     e.preventDefault();
-    
+
                     if (!nextTab) {
                         firstTab.focus();
                     } else {
@@ -380,26 +380,26 @@
                     }
                     break;
             }
-    
+
         };
 
 
         // Add accessibility roles and labels
         tabList.setAttribute('role','tablist');
         tabItems.forEach(function(item, index) {
-    
+
             let link = item.querySelector('a');
-    
+
             // collect tab links
             tabLinks.push(link);
             item.setAttribute('role', 'presentation');
-    
+
             if (index == 0) {
                 item.setAttribute('data-tab-active', '');
             }
-    
+
         });
-    
+
         // Set up tab links
         tabLinks.forEach(function(link, i) {
             let anchor = link.getAttribute('href').split('#')[1];
@@ -410,44 +410,44 @@
                 'aria-selected': 'false',
                 'aria-controls': anchor
             };
-    
+
             // if it's the first element update the attributes
             if (i == 0) {
                 attributes['aria-selected'] = 'true';
                 attributes.tabIndex = '0';
                 link.setAttribute('data-tab-active', '');
             };
-    
+
             // Add the various accessibility roles and labels to the links
             for (var key in attributes) {
                 link.setAttribute(key, attributes[key]);
             }
-                  
+
             // Click Event Listener
             link.addEventListener('click', function(e) {
                 e.preventDefault();
             });
-          
+
             // Click Event Listener
             link.addEventListener('focus', function(e) {
                 tabClickEvent(this, tabLinks, tabPanels, i, e);
             });
-    
+
             // Keyboard event listener
             link.addEventListener('keydown', function(e) {
                 keyboardEvent(link, tabLinks, tabPanels, tabItems, i, e);
             });
         });
-    
+
         // Set up tab panels
         tabPanels.forEach(function(panel, i) {
-    
+
             let attributes = {
                 'role': 'tabpanel',
                 'aria-hidden': 'true',
                 'aria-labelledby': 'tab-link-' + i
             };
-          
+
             if (nextTab) {
                 let nextTabLink = document.createElement('a');
                 let nextTabLinkIndex = (i < tabPanels.length - 1) ? i + 1 : 0;
@@ -457,12 +457,12 @@
                 nextTabLink.textContent = 'Next Tab';
                 panel.appendChild(nextTabLink);
             }
-               
+
             if (i == 0) {
                 attributes['aria-hidden'] = 'false';
                 panel.setAttribute('data-tab-active', '');
             }
-    
+
             for (let key in attributes) {
                 panel.setAttribute(key, attributes[key]);
             }
@@ -476,7 +476,7 @@
     const ssAlertBoxes = function() {
 
         const boxes = document.querySelectorAll('.alert-box');
-  
+
         boxes.forEach(function(box) {
             box.addEventListener('click', function(event) {
                 if (event.target.matches('.alert-box__close')) {
@@ -521,7 +521,7 @@
         }
 
         const triggers = document.querySelectorAll('.smoothscroll');
-        
+
         const moveTo = new MoveTo({
             tolerance: 0,
             duration: 1200,
@@ -533,14 +533,14 @@
             moveTo.registerTrigger(trigger);
         });
 
-    }; 
+    };
 
 
 
    /* Back to Top
     * ------------------------------------------------------ */
     const ssBackToTop = function() {
- 
+
         const pxShow = 800;
         const goTopButton = document.querySelector('.ss-go-top');
 
@@ -556,12 +556,12 @@
                 goTopButton.classList.remove("link-is-visible")
             }
         });
-    }; 
+    };
 
 
 
    /* Revealing Effect
-    * ---------------------------------------------------- */ 
+    * ---------------------------------------------------- */
     const ssRevealingEffect = function() {
 
         const intro = document.querySelector('.s-intro');

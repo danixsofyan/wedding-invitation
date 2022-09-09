@@ -13,6 +13,7 @@
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
         "livewire/livewire": "^2.10",
+        "spatie/laravel-markdown": "^2.2",
         "spatie/laravel-permission": "^5.5"
     },
     "require-dev": {

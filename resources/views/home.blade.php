@@ -82,7 +82,9 @@
                 </h1>
 
                 <div class="text-pretitle">
+                    <x-markdown>
                     {{ $item->note }}
+                    </x-markdown>
                 </div>
                 @endforeach
 
