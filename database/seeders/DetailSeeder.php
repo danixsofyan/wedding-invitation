@@ -19,8 +19,8 @@ class DetailSeeder extends Seeder
             'wedding_id'        => 1,
             'type'              => 'Akad',
             'date'              => '2022-11-05 08:00:00',
-            'address'           => 'Kampus 1 Jl. Cikopak No. 52, Sadang-Purwakarta',
-            'maps'              => 'https://goo.gl/maps/roJzQSwoyMVUgBFc7',
+            'address'           => 'Gedung Mayor Jendral Ar Moer',
+            'maps'              => 'https://goo.gl/maps/5uiLbVMak7FZ5edz6',
             'created_at'        => now(),
             'updated_at'        => now()
         ]);
@@ -29,8 +29,8 @@ class DetailSeeder extends Seeder
             'wedding_id'        => 1,
             'type'              => 'Resepsi',
             'date'              => '2022-11-05 10:00:00',
-            'address'           => 'Kampus 1 Jl. Cikopak No. 52, Sadang-Purwakarta',
-            'maps'              => 'https://goo.gl/maps/roJzQSwoyMVUgBFc7',
+            'address'           => 'Gedung Mayor Jendral Ar Moer',
+            'maps'              => 'https://goo.gl/maps/5uiLbVMak7FZ5edz6',
             'created_at'        => now(),
             'updated_at'        => now()
         ]);

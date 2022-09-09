@@ -2839,6 +2839,13 @@ img.u-pull-left {
     color       : var(--color-text-dark);
 }
 
+.desc {
+    font-family : var(--font-2);
+    font-weight : 300;
+    font-size   : var(--text-sm);
+    color       : var(--color-text-dark);
+}
+
 /* -------------------------------------------------------------------
  * responsive:
  * project-wide shared styles

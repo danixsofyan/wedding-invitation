@@ -32,7 +32,7 @@ class BrideSeeder extends Seeder
 
         Bride::create([
             'wedding_id'        => 1,
-            'name'              => 'Yoga Asmara, M.Pd',
+            'name'              => 'Yoga Asmara, S,Pd., M.Pd.',
             'child'             => 'Putra Kedua dari',
             'name_father'       => 'Bpk Suherman S.Pd',
             'name_mother'       => 'Ibu Nining',
