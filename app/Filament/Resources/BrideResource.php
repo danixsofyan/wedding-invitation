@@ -8,6 +8,10 @@ use App\Models\Bank;
 use App\Models\Bride;
 use App\Models\Wedding;
 use Filament\Forms;
+use Filament\Forms\Components\BelongsToSelect;
+use Filament\Forms\Components\Card;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
@@ -29,22 +33,22 @@ class BrideResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\card::make()->schema([
-                    Forms\Components\BelongsToSelect::make('wedding_id')->label('Wedding')->relationship('wedding', 'name'),
-                    Forms\Components\TextInput::make('name')->required(),
-                    Forms\Components\TextInput::make('child')->name('anak ke')->required(),
-                    Forms\Components\TextInput::make('name_father')->required(),
-                    Forms\Components\TextInput::make('name_mother')->required(),
-                    Forms\Components\TextInput::make('instagram')->required(),
-                    Forms\Components\BelongsToSelect::make('bank_id')->label('Bank')->relationship('Bank', 'name'),
-                    Forms\Components\TextInput::make('acc_name')->required()->label('Bank atas nama'),
-                    Forms\Components\TextInput::make('acc_number')->required()->label('Nomer rekening'),
-                    Forms\Components\Select::make('gender')->required()
+                Card::make()->schema([
+                    BelongsToSelect::make('wedding_id')->label('Wedding')->relationship('wedding', 'name'),
+                    TextInput::make('name')->required(),
+                    TextInput::make('child')->name('anak ke')->required(),
+                    TextInput::make('name_father')->required(),
+                    TextInput::make('name_mother')->required(),
+                    TextInput::make('instagram')->required(),
+                    BelongsToSelect::make('bank_id')->label('Bank')->relationship('Bank', 'name'),
+                    TextInput::make('acc_name')->required()->label('Bank atas nama'),
+                    TextInput::make('acc_number')->required()->label('Nomer rekening'),
+                    Select::make('gender')->required()
                     ->options([
                         'Male' => 'Male',
                         'Female' => 'Female',
                     ]),
-                    Forms\Components\FileUpload::make('photo')->required()->image()->maxSize(2024),
+                    Forms\Components\FileUpload::make('photo')->required()->image(),
                 ])
             ]);
     }

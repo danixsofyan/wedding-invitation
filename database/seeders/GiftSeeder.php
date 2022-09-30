@@ -22,7 +22,7 @@ class GiftSeeder extends Seeder
             Ciseureuh Purwakarta, Kab. Purwakarta
             Jawa Barat 41118
             ',
-            'maps'              => 'https://goo.gl/maps/1abtBDs2c71h5Nx56',
+            'maps'              => '',
             'created_at'        => now(),
             'updated_at'        => now()
         ]);
