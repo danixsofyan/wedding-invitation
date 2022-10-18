@@ -17,7 +17,7 @@
     <meta property="og:title" content="Undangan" />
     <meta property="og:url" content="https://undangan.io" />
     <meta property="og:site_name" content="undangan" />
-    <title>Undangan</title>
+    <title>Fini & Yoga</title>
 
     <!-- mobile specific metas
     ================================================== -->
@@ -56,9 +56,9 @@
 
         <div class="s-intro__slider swiper-container">
             <div class="swiper-wrapper">
-                <div class="s-intro__slide swiper-slide" style="background-image: url(assets/img/hero-1.jpg);"></div>
-                <div class="bg-opacity-50 s-intro__slide swiper-slide" style="background-image: url(assets/img/hero-2.jpg);"></div>
-                <div class="s-intro__slide swiper-slide bg-opacity-10" style="background-image: url(assets/img/hero-3.jpg);"></div>
+                <div class="s-intro__slide swiper-slide" style="background-image: url('/storage/hero-1.JPG');"></div>
+                <div class="bg-opacity-50 s-intro__slide swiper-slide" style="background-image: url('/storage/hero-2.JPG');"></div>
+                <div class="s-intro__slide swiper-slide bg-opacity-10" style="background-image: url('/storage/hero-3.JPG');"></div>
             </div>
         </div>
 
@@ -189,7 +189,7 @@
                                             </p>
                                         </a>
                                         <br>
-                                        <img src="{{ $item->photo }}" style="height:500px; widht:auto;">
+                                        <img src="{{ url('/storage/') }}/{{ $item->photo }}" style="height:500px; widht:auto;">
                                         <p class="desc-bride">
                                             {{ $item->child }}
                                         </p>
@@ -319,7 +319,7 @@
                                     @foreach ($bank as $item)
                                     <div class="column lg-6 tab-12">
                                         <h4>{{ $item->name }}</h4>
-                                        <img src="{{ $item->logo }}" style="height:30px; widht:auto;">
+                                        <img src="{{ url('/storage/') }}/{{ $item->logo }}" style="height:30px; widht:auto;">
                                         <p class="desc">
                                         {{ $item->acc_number }}
                                         <br>a/n {{ $item->acc_name }}

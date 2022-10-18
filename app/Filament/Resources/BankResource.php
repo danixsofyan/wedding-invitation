@@ -6,6 +6,9 @@ use App\Filament\Resources\BankResource\Pages;
 use App\Filament\Resources\BankResource\RelationManagers;
 use App\Models\Bank;
 use Filament\Forms;
+use Filament\Forms\Components\Card;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
@@ -25,9 +28,9 @@ class BankResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\card::make()->schema([
-                    Forms\Components\TextInput::make('name')->required(),
-                    Forms\Components\FileUpload::make('logo')->required()->image()->maxSize(2024),
+                Card::make()->schema([
+                    TextInput::make('name')->required(),
+                    FileUpload::make('logo')->required()->image()->maxSize(2024),
                 ])
             ]);
     }
