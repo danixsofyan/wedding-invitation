@@ -11,6 +11,11 @@ class CreateWish extends Component
     public $name;
     public $comment;
 
+    protected $rules = [
+        'name' => 'required',
+        'comment' => 'required',
+    ];
+
     public function mount(Request $request)
     {
         $this->name = $request->to;
@@ -22,6 +27,8 @@ class CreateWish extends Component
     }
 
     public function createWish(){
+        $this->validate();
+
         Wishes::create([
             'wedding_id' => 1,
             'name' => $this->name,
