@@ -6,6 +6,10 @@ use App\Filament\Resources\WeddingResource\Pages;
 use App\Filament\Resources\WeddingResource\RelationManagers;
 use App\Models\Wedding;
 use Filament\Forms;
+use Filament\Forms\Components\Card;
+use Filament\Forms\Components\MarkdownEditor;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
@@ -25,10 +29,10 @@ class WeddingResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\card::make()->schema([
-                    Forms\Components\TextInput::make('name')->required(),
-                    Forms\Components\MarkdownEditor::make('note')->label('Tagline')->required(),
-                    Forms\Components\Select::make('status')->required()
+                Card::make()->schema([
+                    TextInput::make('name')->required(),
+                    MarkdownEditor::make('note')->label('Tagline')->required(),
+                    Select::make('status')->required()
                     ->options([
                         'Active' => 'Active',
                         'Deactive' => 'Deactive',

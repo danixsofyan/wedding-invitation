@@ -20,4 +20,6 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::post('/home', [HomeController::class, 'store']);
+
 require __DIR__.'/auth.php';

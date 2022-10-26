@@ -33,7 +33,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-
+    @livewireStyles
 </head>
 
 <body id="top" class="ss-preload theme-slides">
@@ -75,13 +75,54 @@
                 </h1>
 
                 <div class="text-pretitle">
-                    <x-markdown>
+                    Dear: <span style="text-color:white; font-weight: bold;">{{ $to }}</span>
+                    <br>We are inviting you to the wedding
+                    <br>
+                    <br>
+                    <button href="#hidden" class="btn--stroke2 btn--small smoothscroll" style="text-color:white !important;">
+                        Open Invitation
+                    </button>
+                    {{-- <a href="#hidden" class="btn btn--primary smoothscroll">Open Invitation</a> --}}
+                    {{-- <x-markdown>
                     {{ $item->note }}
-                    </x-markdown>
+                    </x-markdown> --}}
                 </div>
                 @endforeach
 
                 <div class="s-intro__content-bottom">
+
+                    <div class="s-intro__content-bottom-block">
+                        <h5>Save the date</h5>
+
+                        <div class="counter">
+                            <div class="counter__time">
+                                <span class="ss-days">000</span>
+                                <span>D</span>
+                            </div>
+                            <div class="counter__time">
+                                <span class="ss-hours">00</span>
+                                <span>H</span>
+                            </div>
+                            <div class="counter__time minutes">
+                                <span class="ss-minutes">00</span>
+                                <span>M</span>
+                            </div>
+                            <div class="counter__time">
+                                <span class="ss-seconds">00</span>
+                                <span>S</span>
+                            </div>
+                        </div>  <!-- end counter -->
+
+                    </div> <!-- end s-intro-content__bottom-block -->
+
+                    <div class="s-intro__content-bottom-block">
+
+
+
+                    </div> <!-- end s-intro-content__bottom-block -->
+
+                </div> <
+                {{-- <div class="s-intro__content-bottom">
 
                     <div class="s-intro__content-bottom-block">
                         <h5>Save the date</h5>
@@ -107,7 +148,7 @@
 
                     </div> <!-- end s-intro-content__bottom-block -->
 
-                </div> <!-- end s-intro-content__bottom -->
+                </div> <!-- end s-intro-content__bottom --> --}}
 
             </div>
         </div> <!-- s-intro__content -->
@@ -133,10 +174,10 @@
         <div class="row">
             <div class="column">
 
-                <p class="text-center desc-bride">We are inviting you to the wedding</p>
+                {{-- <p class="text-center desc-bride">We are inviting you to the wedding</p>
                 <h1 class="text-center text-huge-title">
                     {{ $to }}
-                </h1>
+                </h1> --}}
 
                 <nav class="tab-nav">
                     <ul class="tab-nav__list">
@@ -268,23 +309,22 @@
 
                     <!-- 04 - tab wishes -->
                     <div id="tab-wishes" class="tab-content__item">
+                        @foreach ($thank as $item)
+                        <p>{{ $item->note }}</p>
+                        @endforeach
+                        <br>
 
                         <div class="row">
+
                             <div class="column lg-6 tab-12">
-
-                                <form>
-                                    <div>
-                                        <label for="sampleInput">Full name</label>
-                                        <input class="u-fullwidth" type="text" placeholder="Full name" value="{{ $to }}" id="sampleInput">
-                                    </div>
-
-                                    <label for="exampleMessage">Message</label>
-                                    <textarea class="u-fullwidth" placeholder="Your message" id="exampleMessage"></textarea>
-
-                                    <input class="btn--primary u-fullwidth" type="submit" value="Submit">
-                                </form>
-
+                                <livewire:create-wish>
                             </div>
+
+                            <div class="column lg-6 tab-12" style=" height: 500px; overflow: auto;">
+                                <p><b>Ucapan & Doa</p></b>
+                                <livewire:list-wish>
+                            </div>
+
                         </div>
 
                     </div> <!-- end 04 - tab wishes -->
@@ -442,6 +482,8 @@
     })(document.documentElement);
     </Script>
 
+    @include('sweetalert::alert')
+    @livewireScripts
 </body>
 
 </html>

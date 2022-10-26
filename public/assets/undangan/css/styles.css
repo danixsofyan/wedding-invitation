@@ -1744,7 +1744,7 @@ form,
 img,
 .video-container,
 .ss-custom-select {
-    /* margin-bottom : var(--vspace-1); */
+    margin-bottom : var(--vspace-1);
 }
 
 
@@ -2240,12 +2240,14 @@ button.btn--large {
     --btn-height : calc(var(--vspace-btn) + 1.6rem);
 }
 
-.btn--stroke,
-button.btn--stroke {
+.btn--stroke2,
+button.btn--stroke2 {
     background : transparent;
-    border     : 1px solid var(--color-btn-stroke);
-    color      : var(--color-btn-stroke-text);
+    border     : 1px solid var(--color-white);
+    color      : var(--color-white);
 }
+
+
 
 .btn--stroke:focus,
 button.btn--stroke:focus,
