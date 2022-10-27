@@ -17,6 +17,9 @@
     <meta property="og:title" content="Undangan" />
     <meta property="og:url" content="https://undangan.io" />
     <meta property="og:site_name" content="undangan" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
     <title>Fini & Yoga</title>
 
     <!-- mobile specific metas
@@ -27,12 +30,11 @@
     ================================================== -->
     <link rel="stylesheet" href="assets/undangan/css/vendor.css">
     <link rel="stylesheet" href="assets/undangan/css/styles.css">
+    <link rel="stylesheet" href="assets/undangan/css/gallery-grid.css">
 
     <!-- favicons
     ================================================== -->
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="shortcut icon" href="https://www.favicon.cc/logo3d/377601.png" />
     @livewireStyles
 </head>
 
@@ -121,34 +123,7 @@
 
                     </div> <!-- end s-intro-content__bottom-block -->
 
-                </div> <
-                {{-- <div class="s-intro__content-bottom">
-
-                    <div class="s-intro__content-bottom-block">
-                        <h5>Save the date</h5>
-
-                        <div class="counter">
-                            <div class="counter__time">
-                                <span class="ss-days">00</span>
-                                <span>D</span>
-                            </div>
-                            <div class="counter__time">
-                                <span class="ss-hours">00</span>
-                                <span>H</span>
-                            </div>
-                            <div class="counter__time minutes">
-                                <span class="ss-minutes">00</span>
-                                <span>M</span>
-                            </div>
-                            <div class="counter__time">
-                                <span class="ss-seconds">00</span>
-                                <span>S</span>
-                            </div>
-                        </div>  <!-- end counter -->
-
-                    </div> <!-- end s-intro-content__bottom-block -->
-
-                </div> <!-- end s-intro-content__bottom --> --}}
+                </div>
 
             </div>
         </div> <!-- s-intro__content -->
@@ -304,7 +279,45 @@
 
                     <!-- 03 - tab gallery -->
                     <div id="tab-gallery" class="tab-content__item">
+                        <div class="tz-gallery">
 
+                            <div class="row">
+                                <div class="col-sm-6 col-md-4">
+                                    <a class="lightbox" href="{{ url('/storage/') }}/2.JPG">
+                                        <img src="{{ url('/storage/') }}/2.JPG">
+                                    </a>
+                                </div>
+                                <div class="col-sm-6 col-md-4">
+                                    <a class="lightbox" href="{{ url('/storage/') }}/3.JPG">
+                                        <img src="{{ url('/storage/') }}/3.JPG">
+                                    </a>
+                                </div>
+                                <div class="col-sm-12 col-md-4">
+                                    <a class="lightbox" href="{{ url('/storage/') }}/4.JPG">
+                                        <img src="{{ url('/storage/') }}/4.JPG" alt="Tunnel">
+                                    </a>
+                                </div>
+                                <div class="col-sm-6 col-md-4">
+                                    <a class="lightbox" href="{{ url('/storage/') }}/5.JPG">
+                                        <img src="{{ url('/storage/') }}/5.JPG" alt="Coast">
+                                    </a>
+                                </div>
+                                <div class="col-sm-6 col-md-4">
+                                    <a class="lightbox" href="{{ url('/storage/') }}/6.JPG">
+                                        <img src="{{ url('/storage/') }}/6.JPG" alt="Rails">
+                                    </a>
+                                </div>
+                                <div class="col-sm-6 col-md-4">
+                                    <a class="lightbox" href="{{ url('/storage/') }}/1.JPG">
+                                        <img src="{{ url('/storage/') }}/1.JPG" alt="Traffic">
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/cUvfbmgQRj8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
                     </div> <!-- end 03 - tab gallery -->
 
                     <!-- 04 - tab wishes -->
@@ -481,6 +494,11 @@
 
     })(document.documentElement);
     </Script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+    <script>
+        baguetteBox.run('.tz-gallery');
+    </script>
 
     @include('sweetalert::alert')
     @livewireScripts
