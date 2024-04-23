@@ -10,10 +10,12 @@ use Filament\Forms\Components\Card;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
 use Filament\Tables;
+use Filament\Tables\Columns\BadgeColumn;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -33,10 +35,10 @@ class WeddingResource extends Resource
                     TextInput::make('name')->required(),
                     MarkdownEditor::make('note')->label('Tagline')->required(),
                     Select::make('status')->required()
-                    ->options([
-                        'Active' => 'Active',
-                        'Deactive' => 'Deactive',
-                    ])
+                        ->options([
+                            'Active' => 'Active',
+                            'Deactive' => 'Deactive',
+                        ])
                 ])
             ]);
     }
@@ -45,13 +47,13 @@ class WeddingResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name')->searchable(),
-                Tables\Columns\BadgeColumn::make('status')
-                ->colors([
-                    'primary',
-                    'danger' => 'Deactive',
-                    'success' => 'Active',
-                ])
+                TextColumn::make('name')->searchable(),
+                BadgeColumn::make('status')
+                    ->colors([
+                        'primary',
+                        'danger' => 'Deactive',
+                        'success' => 'Active',
+                    ])
             ])
             ->filters([
                 //
@@ -60,7 +62,9 @@ class WeddingResource extends Resource
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\DeleteBulkAction::make(),
+                ]),
             ]);
     }
 

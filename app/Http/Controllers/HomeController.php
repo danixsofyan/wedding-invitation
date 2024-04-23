@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Bride;
 use App\Models\Detail;
+use App\Models\Galery;
 use App\Models\Wedding;
 use App\Models\Gift;
 use App\Models\Thank;
 use App\Models\Wishes;
 use Illuminate\Http\Request;
-use Alert;
 
 class HomeController extends Controller
 {
@@ -26,10 +26,11 @@ class HomeController extends Controller
         $detail     = Detail::all();
         $gift       = Gift::all();
         $thank      = Thank::all();
+        $galery     = Galery::all();
         $wish       = Wishes::orderby('id', 'desc')->get();
         $bank       = Bride::select('brides.name', 'brides.acc_name', 'brides.acc_number', 'brides.bank_id', 'banks.name as bank_name', 'banks.logo')->join('banks', 'banks.id', 'brides.bank_id')->get();
 
-        return view('home', compact('bride', 'detail', 'wedding', 'gift', 'bank', 'to', 'thank', 'wish'));
+        return view('home', compact('bride', 'detail', 'wedding', 'gift', 'bank', 'to', 'thank', 'wish', 'galery'));
     }
 
     /**
@@ -60,7 +61,7 @@ class HomeController extends Controller
 
         Wishes::create($input);
 
-        return redirect('/'.'#tab-wishes');
+        return redirect('/' . '#tab-wishes');
     }
 
     /**

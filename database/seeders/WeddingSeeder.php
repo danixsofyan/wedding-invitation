@@ -16,7 +16,7 @@ class WeddingSeeder extends Seeder
     public function run()
     {
         Wedding::create([
-            'name'          => 'Fini & Yoga',
+            'name'          => 'Darren & Jun',
             'note'          => 'A great marriage is not when the perfect couple comes together. \
             It is when an imperfect couple learns to enjoy their differences.',
             'status'        => 'Active',

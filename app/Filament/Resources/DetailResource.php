@@ -6,10 +6,16 @@ use App\Filament\Resources\DetailResource\Pages;
 use App\Filament\Resources\DetailResource\RelationManagers;
 use App\Models\Detail;
 use Filament\Forms;
-use Filament\Resources\Form;
+use Filament\Forms\Components\BelongsToSelect;
+use Filament\Forms\Components\Card;
+use Filament\Forms\Components\DateTimePicker;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -25,17 +31,18 @@ class DetailResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\card::make()->schema([
-                    Forms\Components\BelongsToSelect::make('wedding_id')->label('Wedding')->relationship('wedding', 'name'),
-                    Forms\Components\Select::make('type')->required()
-                    ->options([
-                        'Akad' => 'Akad',
-                        'Resepsi' => 'Resepsi',
-                        'Ngunduh Mantu' => 'Ngunduh Mantu',
-                    ]),
-                    Forms\Components\DateTimePicker::make('date'),
-                    Forms\Components\TextInput::make('address')->required(),
-                    Forms\Components\TextInput::make('maps')->required(),
+                Card::make()->schema([
+                    BelongsToSelect::make('wedding_id')->label('Wedding')->relationship('wedding', 'name'),
+                    Select::make('type')->required()
+                        ->options([
+                            'Akad' => 'Akad',
+                            'Resepsi' => 'Resepsi',
+                            'Ngunduh Mantu' => 'Ngunduh Mantu',
+                        ]),
+                    DateTimePicker::make('date'),
+                    TextInput::make('address')->required(),
+                    TextInput::make('maps')->required(),
+                    TextInput::make('calendar')->required(),
                 ])
             ]);
     }
@@ -44,10 +51,10 @@ class DetailResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('type'),
-                Tables\Columns\TextColumn::make('date'),
-                Tables\Columns\TextColumn::make('address'),
-                Tables\Columns\TextColumn::make('maps'),
+                TextColumn::make('type'),
+                TextColumn::make('date'),
+                TextColumn::make('address'),
+                TextColumn::make('maps'),
             ])
             ->filters([
                 //
@@ -56,7 +63,9 @@ class DetailResource extends Resource
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\DeleteBulkAction::make(),
+                ]),
             ]);
     }
 

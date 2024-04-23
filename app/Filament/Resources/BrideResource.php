@@ -4,18 +4,19 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\BrideResource\Pages;
 use App\Filament\Resources\BrideResource\RelationManagers;
-use App\Models\Bank;
 use App\Models\Bride;
-use App\Models\Wedding;
 use Filament\Forms;
 use Filament\Forms\Components\BelongsToSelect;
 use Filament\Forms\Components\Card;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
 use Filament\Tables;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -44,11 +45,11 @@ class BrideResource extends Resource
                     TextInput::make('acc_name')->required()->label('Bank atas nama'),
                     TextInput::make('acc_number')->required()->label('Nomer rekening'),
                     Select::make('gender')->required()
-                    ->options([
-                        'Male' => 'Male',
-                        'Female' => 'Female',
-                    ]),
-                    Forms\Components\FileUpload::make('photo')->required()->image(),
+                        ->options([
+                            'Male' => 'Male',
+                            'Female' => 'Female',
+                        ]),
+                    FileUpload::make('photo')->required()->image(),
                 ])
             ]);
     }
@@ -57,11 +58,11 @@ class BrideResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name')->searchable(),
-                Tables\Columns\TextColumn::make('name_father'),
-                Tables\Columns\TextColumn::make('name_mother'),
-                Tables\Columns\TextColumn::make('gender'),
-                Tables\Columns\ImageColumn::make('photo')
+                TextColumn::make('name')->searchable(),
+                TextColumn::make('name_father'),
+                TextColumn::make('name_mother'),
+                TextColumn::make('gender'),
+                ImageColumn::make('photo')
             ])
             ->filters([
                 //
@@ -70,14 +71,16 @@ class BrideResource extends Resource
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\DeleteBulkAction::make(),
+                ]),
             ]);
     }
 
     public static function getRelations(): array
     {
         return [
-
+            //
         ];
     }
 
@@ -86,7 +89,6 @@ class BrideResource extends Resource
         return [
             'index' => Pages\ListBrides::route('/'),
             'create' => Pages\CreateBride::route('/create'),
-            'view' => Pages\ViewBride::route('/{record}'),
             'edit' => Pages\EditBride::route('/{record}/edit'),
         ];
     }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
+
 <head>
     <base href="{{ asset('/') }}">
     <!--- basic page needs
@@ -14,13 +15,14 @@
     <meta name="author" content="danixsofyan" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Undangan" />
-    <meta property="og:url" content="https://undangan.io" />
-    <meta property="og:site_name" content="undangan" />
+    <meta property="og:title" content="Wedding Invitations" />
+    <meta property="og:site_name" content="Wedding Invitations" />
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
-    <title>Fini & Yoga</title>
+    @foreach ($wedding as $item)
+    <title>{{ $item->name }}</title>
+    @endforeach
 
     <!-- mobile specific metas
     ================================================== -->
@@ -41,7 +43,7 @@
 <body id="top" class="ss-preload theme-slides">
 
 
-   <!-- preloader
+    <!-- preloader
     ================================================== -->
     <div id="preloader">
         <div id="loader" class="dots-fade">
@@ -58,9 +60,9 @@
 
         <div class="s-intro__slider swiper-container">
             <div class="swiper-wrapper">
-                <div class="s-intro__slide swiper-slide" style="background-image: url('/storage/hero-1.JPG');"></div>
-                <div class="bg-opacity-50 s-intro__slide swiper-slide" style="background-image: url('/storage/hero-2.JPG');"></div>
-                <div class="s-intro__slide swiper-slide bg-opacity-10" style="background-image: url('/storage/hero-3.JPG');"></div>
+                <div class="s-intro__slide swiper-slide" style="background-image: url('/storage/hero-1.jpeg');"></div>
+                <div class="bg-opacity-50 s-intro__slide swiper-slide" style="background-image: url('/storage/hero-2.jpeg');"></div>
+                <div class="s-intro__slide swiper-slide bg-opacity-10" style="background-image: url('/storage/hero-3.jpeg');"></div>
             </div>
         </div>
 
@@ -68,12 +70,12 @@
             <div class="column">
 
                 <div class="text-pretitle">
-                The Wedding
+                    The Wedding
                 </div>
 
                 @foreach ($wedding as $item)
                 <h1 class="text-huge-title">
-                {{ $item->name }}
+                    {{ $item->name }}
                 </h1>
 
                 <div class="text-pretitle">
@@ -84,10 +86,7 @@
                     <button href="#hidden" class="btn--stroke2 btn--small smoothscroll" style="text-color:white !important;">
                         Open Invitation
                     </button>
-                    {{-- <a href="#hidden" class="btn btn--primary smoothscroll">Open Invitation</a> --}}
-                    {{-- <x-markdown>
-                    {{ $item->note }}
-                    </x-markdown> --}}
+                    <!-- <a href="#hidden" class="btn btn--primary smoothscroll">Open Invitation</a> -->
                 </div>
                 @endforeach
 
@@ -113,7 +112,7 @@
                                 <span class="ss-seconds">00</span>
                                 <span>S</span>
                             </div>
-                        </div>  <!-- end counter -->
+                        </div> <!-- end counter -->
 
                     </div> <!-- end s-intro-content__bottom-block -->
 
@@ -234,7 +233,7 @@
                         <div class="row">
                             <div class="column">
                                 <p class="desc">
-                                Kami sangat berharap anda dapat hadir di moment bahagia ini
+                                    Kami sangat berharap anda dapat hadir di moment bahagia ini
                                 </p>
                             </div>
                         </div>
@@ -246,28 +245,26 @@
                                     <h4 class="item-title">{{ $item->type }}</h4>
                                     <p class="desc-bride">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar3" viewBox="0 0 16 16">
-                                            <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"/>
-                                            <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                                            <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />
+                                            <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
                                         </svg>
                                         {{ date_format(date_create($item->date),"d F Y");  }}
-                                    <br>
+                                        <br>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
-                                            <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
-                                            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                                            <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
+                                            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z" />
                                         </svg>
                                         {{ date_format(date_create($item->date),"H:i:s");  }}
-                                    <br>
+                                        <br>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
-                                            <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
-                                            <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                            <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+                                            <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                                         </svg>
                                         {{ $item->address }}
-                                    <br>
-                                    <br>
-                                    <a href="{{ $item->maps }}" class="btn btn--stroke u-fullwidth" target="_blank">View Maps</a>
-                                    @foreach ($wedding as $item)
-                                    <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Pernikahan%20Fini%20%26%20Yoga&details=Kami%20sangat%20berharap%20anda%20dapat%20hadir%20di%20moment%20bahagia%20ini&location=GEDUNG%20MAYOR%20JENDRAL%20AR%20MOER&dates=20221105T010000Z%2F20221105T080000Z&ctz=Asia%2FJakarta" class="btn btn--stroke u-fullwidth" target="_blank">Add to calendar</a>
-                                    @endforeach
+                                        <br>
+                                        <br>
+                                        <a href="{{ $item->maps }}" class="btn btn--stroke u-fullwidth" target="_blank">View Maps</a>
+                                        <a href="{{ $item->calendar }}" class="btn btn--stroke u-fullwidth" target="_blank">Add to calendar</a>
                                     </p>
                                 </div>
                             </div>
@@ -278,47 +275,50 @@
                     </div> <!-- end 02 - tab event -->
 
                     <!-- 03 - tab gallery -->
+                    @foreach ($galery as $item)
                     <div id="tab-gallery" class="tab-content__item">
                         <div class="tz-gallery">
 
                             <div class="row">
                                 <div class="col-sm-6 col-md-4">
-                                    <a class="lightbox" href="{{ url('/storage/') }}/2.JPG">
-                                        <img src="{{ url('/storage/') }}/2.JPG">
+                                    <a class="lightbox" href="{{ url('/storage/') }}/{{ $item->gallery1 }}">
+                                        <img src="{{ url('/storage/') }}/{{ $item->gallery1 }}">
                                     </a>
                                 </div>
                                 <div class="col-sm-6 col-md-4">
-                                    <a class="lightbox" href="{{ url('/storage/') }}/3.JPG">
-                                        <img src="{{ url('/storage/') }}/3.JPG">
+                                    <a class="lightbox" href="{{ url('/storage/') }}/{{ $item->gallery2 }}">
+                                        <img src="{{ url('/storage/') }}/{{ $item->gallery2 }}">
                                     </a>
                                 </div>
                                 <div class="col-sm-12 col-md-4">
-                                    <a class="lightbox" href="{{ url('/storage/') }}/4.JPG">
-                                        <img src="{{ url('/storage/') }}/4.JPG" alt="Tunnel">
+                                    <a class="lightbox" href="{{ url('/storage/') }}/{{ $item->gallery3 }}">
+                                        <img src="{{ url('/storage/') }}/{{ $item->gallery3 }}">
                                     </a>
                                 </div>
                                 <div class="col-sm-6 col-md-4">
-                                    <a class="lightbox" href="{{ url('/storage/') }}/5.JPG">
-                                        <img src="{{ url('/storage/') }}/5.JPG" alt="Coast">
+                                    <a class="lightbox" href="{{ url('/storage/') }}/{{ $item->gallery4 }}">
+                                        <img src="{{ url('/storage/') }}/{{ $item->gallery4 }}">
                                     </a>
                                 </div>
                                 <div class="col-sm-6 col-md-4">
-                                    <a class="lightbox" href="{{ url('/storage/') }}/6.JPG">
-                                        <img src="{{ url('/storage/') }}/6.JPG" alt="Rails">
+                                    <a class="lightbox" href="{{ url('/storage/') }}/{{ $item->gallery5 }}">
+                                        <img src="{{ url('/storage/') }}/{{ $item->gallery5 }}">
                                     </a>
                                 </div>
                                 <div class="col-sm-6 col-md-4">
-                                    <a class="lightbox" href="{{ url('/storage/') }}/1.JPG">
-                                        <img src="{{ url('/storage/') }}/1.JPG" alt="Traffic">
+                                    <a class="lightbox" href="{{ url('/storage/') }}/{{ $item->gallery6 }}">
+                                        <img src="{{ url('/storage/') }}/{{ $item->gallery6 }}">
                                     </a>
                                 </div>
                             </div>
 
                             <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/cUvfbmgQRj8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe class="embed-responsive-item" src="{{ $item->video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                         </div>
-                    </div> <!-- end 03 - tab gallery -->
+                    </div>
+                    @endforeach
+                    <!-- end 03 - tab gallery -->
 
                     <!-- 04 - tab wishes -->
                     <div id="tab-wishes" class="tab-content__item">
@@ -355,7 +355,7 @@
                                         <p class="desc">
                                             {{ $item->address }}
                                             <br>
-                                            @if(!$item->note) @else  Patokan : {{ $item->note }} @endif
+                                            @if(!$item->note) @else Patokan : {{ $item->note }} @endif
                                             <a href="{{ $item->maps }}" target="_blank">{{ $item->maps }}</a>
                                         </p>
 
@@ -374,8 +374,8 @@
                                         <h4>{{ $item->name }}</h4>
                                         <img src="{{ url('/storage/') }}/{{ $item->logo }}" style="height:30px; widht:auto;">
                                         <p class="desc">
-                                        {{ $item->acc_number }}
-                                        <br>a/n {{ $item->acc_name }}
+                                            {{ $item->acc_number }}
+                                            <br>a/n {{ $item->acc_name }}
                                         </p>
 
                                     </div>
@@ -405,8 +405,10 @@
         <div class="ss-go-top">
             <a class="smoothscroll" title="Back to Top" href="#top">
                 <span>Back to Top</span>
-                <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" width="26" height="26"><path d="M7.5 1.5l.354-.354L7.5.793l-.354.353.354.354zm-.354.354l4 4 .708-.708-4-4-.708.708zm0-.708l-4 4 .708.708 4-4-.708-.708zM7 1.5V14h1V1.5H7z" fill="currentColor"></path></svg>
-             </a>
+                <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
+                    <path d="M7.5 1.5l.354-.354L7.5.793l-.354.353.354.354zm-.354.354l4 4 .708-.708-4-4-.708.708zm0-.708l-4 4 .708.708 4-4-.708-.708zM7 1.5V14h1V1.5H7z" fill="currentColor"></path>
+                </svg>
+            </a>
         </div> <!-- end ss-go-top -->
 
     </section> <!-- end s-details -->
@@ -417,82 +419,82 @@
     <script src="assets/undangan/js/plugins.js"></script>
     <script src="assets/undangan/js/main.js"></script>
     <Script>
-    (function(html) {
+        (function(html) {
 
-        'use strict';
+            'use strict';
 
-        html.className = html.className.replace(/\bno-js\b/g, '') + 'js';
+            html.className = html.className.replace(/\bno-js\b/g, '') + 'js';
 
-        const cfg = {
+            const cfg = {
 
-            // Countdown Timer Final Date
-            finalDate : 'November 5, 2022 09:00:00',
-            // MailChimp URL
-            mailChimpURL : 'https://facebook.us1.list-manage.com/subscribe/post?u=1abf75f6981256963a47d197a&amp;id=37c6d8f4d6'
+                // Countdown Timer Final Date
+                finalDate: 'November 5, 2050 08:00:00',
+                // MailChimp URL
+                mailChimpURL: 'https://facebook.us1.list-manage.com/subscribe/post?u=1abf75f6981256963a47d197a&amp;id=37c6d8f4d6'
 
-        };
+            };
 
-        /* Countdown Timer
-        * ------------------------------------------------------ */
-        const ssCountdown = function () {
+            /* Countdown Timer
+             * ------------------------------------------------------ */
+            const ssCountdown = function() {
 
-        const finalDate = new Date(cfg.finalDate).getTime();
-        const daysSpan = document.querySelector('.counter .ss-days');
-        const hoursSpan = document.querySelector('.counter .ss-hours');
-        const minutesSpan = document.querySelector('.counter .ss-minutes');
-        const secondsSpan = document.querySelector('.counter .ss-seconds');
-        let timeInterval;
+                const finalDate = new Date(cfg.finalDate).getTime();
+                const daysSpan = document.querySelector('.counter .ss-days');
+                const hoursSpan = document.querySelector('.counter .ss-hours');
+                const minutesSpan = document.querySelector('.counter .ss-minutes');
+                const secondsSpan = document.querySelector('.counter .ss-seconds');
+                let timeInterval;
 
-        if (!(daysSpan && hoursSpan && minutesSpan && secondsSpan)) return;
+                if (!(daysSpan && hoursSpan && minutesSpan && secondsSpan)) return;
 
-        function timer() {
+                function timer() {
 
-            const now = new Date().getTime();
-            let diff = finalDate - now;
+                    const now = new Date().getTime();
+                    let diff = finalDate - now;
 
-            if (diff <= 0) {
-                if (timeInterval) {
-                    clearInterval(timeInterval);
+                    if (diff <= 0) {
+                        if (timeInterval) {
+                            clearInterval(timeInterval);
+                        }
+                        return;
+                    }
+
+                    let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                    let hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                    let minutes = Math.floor((diff / 1000 / 60) % 60);
+                    let seconds = Math.floor((diff / 1000) % 60);
+
+                    if (days <= 99) {
+                        if (days <= 9) {
+                            days = '00' + days;
+                        } else {
+                            days = '0' + days;
+                        }
+                    }
+
+                    hours <= 9 ? hours = '0' + hours : hours;
+                    minutes <= 9 ? minutes = '0' + minutes : minutes;
+                    seconds <= 9 ? seconds = '0' + seconds : seconds;
+
+                    daysSpan.textContent = days;
+                    hoursSpan.textContent = hours;
+                    minutesSpan.textContent = minutes;
+                    secondsSpan.textContent = seconds;
+
                 }
-                return;
-            }
 
-            let days = Math.floor( diff/(1000*60*60*24) );
-            let hours = Math.floor( (diff/(1000*60*60)) % 24 );
-            let minutes = Math.floor( (diff/1000/60) % 60 );
-            let seconds = Math.floor( (diff/1000) % 60 );
+                timer();
+                timeInterval = setInterval(timer, 1000);
+            };
 
-            if (days <= 99) {
-                if (days <= 9) {
-                    days = '00' + days;
-                } else {
-                    days = '0' + days;
-                }
-            }
+            /* Initialize
+             * ------------------------------------------------------ */
+            (function ssInit() {
+                ssCountdown();
 
-            hours <= 9 ? hours = '0' + hours : hours;
-            minutes <= 9 ? minutes = '0' + minutes : minutes;
-            seconds <= 9 ? seconds = '0' + seconds : seconds;
+            })();
 
-            daysSpan.textContent = days;
-            hoursSpan.textContent = hours;
-            minutesSpan.textContent = minutes;
-            secondsSpan.textContent = seconds;
-
-        }
-
-        timer();
-        timeInterval = setInterval(timer, 1000);
-        };
-
-    /* Initialize
-    * ------------------------------------------------------ */
-    (function ssInit() {
-        ssCountdown();
-
-    })();
-
-    })(document.documentElement);
+        })(document.documentElement);
     </Script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>

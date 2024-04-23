@@ -39,4 +39,9 @@ class Wedding extends Model
     {
         return $this->hasMany(Wishes::class);
     }
+
+    public function Galery()
+    {
+        return $this->hasMany(Galery::class);
+    }
 }

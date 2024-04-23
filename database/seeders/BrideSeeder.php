@@ -16,32 +16,32 @@ class BrideSeeder extends Seeder
     {
         Bride::create([
             'wedding_id'        => 1,
-            'name'              => 'Siti Nabila Lutfinia, S.Pd',
+            'name'              => 'Darren Tan',
             'child'             => 'Putri Pertama dari',
-            'name_father'       => 'Bpk Drs. Deni Faisal Abdurahman',
-            'name_mother'       => 'Ibu Dra. Eem Masruroh',
-            'instagram'         => 'https://www.instagram.com/lutfinianabilaa/',
+            'name_father'       => 'Bpk Jhone Doe',
+            'name_mother'       => 'Ibu Isabela Putri',
+            'instagram'         => 'https://www.instagram.com/codelogydev/',
             'bank_id'           => 2,
-            'acc_name'          => 'Siti Nabila Lutfinia',
-            'acc_number'        => 396962636,
+            'acc_name'          => 'Darren Tan',
+            'acc_number'        => 923123456,
             'gender'            => 'Female',
-            'photo'             => 'fini.jpg',
+            'photo'             => 'female.jpg',
             'created_at'        => now(),
             'updated_at'        => now()
         ]);
 
         Bride::create([
             'wedding_id'        => 1,
-            'name'              => 'Yoga Asmara, S,Pd., M.Pd.',
+            'name'              => 'Ijunwen',
             'child'             => 'Putra Kedua dari',
-            'name_father'       => 'Bpk Suherman S.Pd',
-            'name_mother'       => 'Ibu Nining',
-            'instagram'         => 'https://www.instagram.com/yogaasmaraa/',
+            'name_father'       => 'Bpk Bohemian Rapsody S.Pd',
+            'name_mother'       => 'Ibu Fricilia Ginting',
+            'instagram'         => 'https://www.instagram.com/danixsofyan/',
             'bank_id'           => 1,
-            'acc_name'          => 'Yoga Asmara',
-            'acc_number'        => 2330288542,
+            'acc_name'          => 'Ijunwen',
+            'acc_number'        => 456789234,
             'gender'            => 'Male',
-            'photo'             => 'yoga.jpg',
+            'photo'             => 'male.jpg',
             'created_at'        => now(),
             'updated_at'        => now()
         ]);

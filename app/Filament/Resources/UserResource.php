@@ -4,14 +4,22 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\UserResource\Pages;
 use App\Filament\Resources\UserResource\RelationManagers;
+use App\Models\Role;
 use App\Models\User;
 use Filament\Forms;
-use Filament\Resources\Form;
+use Filament\Forms\Components\Card;
+use Filament\Forms\Components\DateTimePicker;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UserResource extends Resource
@@ -24,15 +32,31 @@ class UserResource extends Resource
 
     protected static ?string $navigationLabel = 'Account';
 
+    public static function canCreate(): bool
+    {
+        return false;
+    }
+
+    public static function canEdit(Model $record): bool
+    {
+        return false;
+    }
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\card::make()->schema([
-                    Forms\Components\TextInput::make('name')->required(),
-                    Forms\Components\TextInput::make('email')->email()->unique()->required(),
-                    Forms\Components\TextInput::make('password')->password()->dehydrateStateUsing(fn ($state) => Hash::make($state))->dehydrated(fn ($state) => filled($state)),
-                    Forms\Components\TextInput::make('passwordConfirmation')->password(),
+                Card::make()->schema([
+                    TextInput::make('name')->required(),
+                    TextInput::make('email')->email()->required(),
+                    TextInput::make('password')->password()->dehydrateStateUsing(fn ($state) => Hash::make($state))->dehydrated(fn ($state) => filled($state))->revealable()->confirmed()->required(),
+                    TextInput::make('password_confirmation')->password()->revealable()->required(),
+                    Select::make('role_id')->searchable()
+                        ->required()
+                        ->label('Role')
+                        ->options(Role::all()->pluck('name', 'id')->toArray())
+                        ->reactive()
+                        ->afterStateUpdated(fn (callable $set) => $set('id', 'null')),
                 ])
             ]);
     }
@@ -41,9 +65,9 @@ class UserResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name'),
-                Tables\Columns\TextColumn::make('email'),
-                Tables\Columns\TextColumn::make('roles.name'),
+                TextColumn::make('name'),
+                TextColumn::make('email'),
+                TextColumn::make('roles.name'),
             ])
             ->filters([
                 //
@@ -52,7 +76,9 @@ class UserResource extends Resource
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\DeleteBulkAction::make(),
+                ]),
             ]);
     }
 
@@ -70,5 +96,14 @@ class UserResource extends Resource
             'create' => Pages\CreateUser::route('/create'),
             'edit' => Pages\EditUser::route('/{record}/edit'),
         ];
+    }
+
+    public static function getEloquentQuery(): Builder
+    {
+        if (Auth::user()->hasRole('Super admin|Admin')) {
+            return parent::getEloquentQuery();
+        } else {
+            return parent::getEloquentQuery()->where('id', '=', Auth::user()->id);
+        }
     }
 }

@@ -16,13 +16,12 @@ class GiftSeeder extends Seeder
     {
         Gift::create([
             'wedding_id'        => 1,
-            'name'              => 'Rumah Fini',
-            'address'           => 'Puskopad
-            Jalan Garuda III Blok B No.31
-            Ciseureuh Purwakarta, Kab. Purwakarta
-            Jawa Barat 41118
+            'name'              => 'Rumah Darren',
+            'address'           => 'Perumahan pondok indah
+            Jl. Pd. Indah No.12 12, RT.12/RW.6, Pesanggrahan, Kec. Pesanggrahan, 
+            Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12320
             ',
-            'maps'              => '',
+            'maps'              => 'https://maps.app.goo.gl/FDTdgwmkumfq2fGM6',
             'created_at'        => now(),
             'updated_at'        => now()
         ]);

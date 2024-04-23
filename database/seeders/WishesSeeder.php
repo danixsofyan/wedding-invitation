@@ -17,7 +17,7 @@ class WishesSeeder extends Seeder
         Wishes::create([
             'wedding_id'            => 1,
             'name'                  => 'Dani Sofyan',
-            'comment'               => 'Semoga sakinah mawadah warohmah',
+            'comment'               => 'Semoga menjadi keluarga bahagia',
             'created_at'            => now(),
             'updated_at'            => now()
         ]);

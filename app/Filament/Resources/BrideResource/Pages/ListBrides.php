@@ -3,14 +3,14 @@
 namespace App\Filament\Resources\BrideResource\Pages;
 
 use App\Filament\Resources\BrideResource;
-use Filament\Pages\Actions;
+use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 
 class ListBrides extends ListRecords
 {
     protected static string $resource = BrideResource::class;
 
-    protected function getActions(): array
+    protected function getHeaderActions(): array
     {
         return [
             Actions\CreateAction::make(),

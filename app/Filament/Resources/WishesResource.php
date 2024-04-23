@@ -6,18 +6,22 @@ use App\Filament\Resources\WishesResource\Pages;
 use App\Filament\Resources\WishesResource\RelationManagers;
 use App\Models\Wishes;
 use Filament\Forms;
-use Filament\Resources\Form;
+use Filament\Forms\Components\Card;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class WishesResource extends Resource
 {
     protected static ?string $model = Wishes::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-chat-alt-2';
+    protected static ?string $navigationIcon = 'heroicon-m-chat-bubble-oval-left-ellipsis';
 
     protected static ?string $navigationGroup = 'Guest';
 
@@ -27,9 +31,9 @@ class WishesResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\card::make()->schema([
-                    Forms\Components\TextInput::make('name')->required(),
-                    Forms\Components\TextInput::make('comment')->required(),
+                Card::make()->schema([
+                    TextInput::make('name')->required(),
+                    TextInput::make('comment')->required(),
                 ])
             ]);
     }
@@ -38,9 +42,8 @@ class WishesResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('wedding.name'),
-                Tables\Columns\TextColumn::make('name')->searchable(),
-                Tables\Columns\TextColumn::make('comment'),
+                TextColumn::make('name')->searchable(),
+                TextColumn::make('comment'),
             ])
             ->filters([
                 //
@@ -49,7 +52,9 @@ class WishesResource extends Resource
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\DeleteBulkAction::make(),
+                ]),
             ]);
     }
 
@@ -65,8 +70,17 @@ class WishesResource extends Resource
         return [
             'index' => Pages\ListWishes::route('/'),
             'create' => Pages\CreateWishes::route('/create'),
-            'view' => Pages\ViewWishes::route('/{record}'),
             'edit' => Pages\EditWishes::route('/{record}/edit'),
         ];
+    }
+
+    public static function canCreate(): bool
+    {
+        return false;
+    }
+
+    public static function canEdit(Model $record): bool
+    {
+        return false;
     }
 }
