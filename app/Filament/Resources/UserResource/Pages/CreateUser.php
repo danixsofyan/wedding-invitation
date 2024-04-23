@@ -26,8 +26,9 @@ class CreateUser extends CreateRecord
 
     protected function handleRecordCreation(array $data): Model
     {
+        $role = Role::where('id', $data['role_id'])->first();
         $record = static::getModel()::create($data);
-        $record->assignRole('User');
+        $record->assignRole($role['name']);
 
         return $record;
     }
