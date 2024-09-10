@@ -316,10 +316,11 @@ foreach ($detail as $item) {
                                     </a>
                                 </div>
                             </div>
-
+                            @if (isset($item->video) && $item->video !== '-')
                             <div class="embed-responsive embed-responsive-16by9">
                                 <iframe class="embed-responsive-item" src="{{ $item->video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
+                            @endif
                         </div>
                     </div>
                     @endforeach

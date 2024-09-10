@@ -37,7 +37,7 @@ class GaleryResource extends Resource
                 FileUpload::make('gallery4')->required()->image(),
                 FileUpload::make('gallery5')->required()->image(),
                 FileUpload::make('gallery6')->required()->image(),
-                TextInput::make('video')->required(),
+                TextInput::make('video')->helperText('example : https://www.youtube.com/embed/syMFHd5Gxxk'),
             ]);
     }
 

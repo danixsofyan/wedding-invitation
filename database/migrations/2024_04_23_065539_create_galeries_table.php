@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('gallery4');
             $table->string('gallery5');
             $table->string('gallery6');
-            $table->string('video');
+            $table->string('video')->nullable();
             $table->timestamps();
         });
     }
