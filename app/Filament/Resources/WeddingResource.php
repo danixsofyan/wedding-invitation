@@ -15,6 +15,7 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\BadgeColumn;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
@@ -52,6 +53,9 @@ class WeddingResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('name')->searchable(),
+                ImageColumn::make('hero1'),
+                ImageColumn::make('hero2'),
+                ImageColumn::make('hero3'),
                 BadgeColumn::make('status')
                     ->colors([
                         'primary',
