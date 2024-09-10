@@ -8,7 +8,7 @@
     </div>
     @enderror
 
-    <label for="exampleMessage">Ucapan & doa restu</label>
+    <label for="exampleMessage">Ucapan & doa</label>
     <textarea wire:model="comment" class="u-fullwidth" placeholder="Ucapan anda" name="comment" required></textarea>
     @error('comment')
     <div class="alert-box alert-box--error">
