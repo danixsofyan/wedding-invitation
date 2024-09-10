@@ -1,3 +1,8 @@
+<?php
+foreach ($detail as $item) {
+    $finalDate = date_format(date_create($item->date), "F j, Y H:i:s");
+}
+?>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
@@ -428,7 +433,7 @@
             const cfg = {
 
                 // Countdown Timer Final Date
-                finalDate: 'November 5, 2050 08:00:00',
+                finalDate: '<?php echo $finalDate; ?>',
                 // MailChimp URL
                 mailChimpURL: 'https://facebook.us1.list-manage.com/subscribe/post?u=1abf75f6981256963a47d197a&amp;id=37c6d8f4d6'
 
