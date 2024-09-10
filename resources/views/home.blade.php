@@ -62,12 +62,12 @@ foreach ($detail as $item) {
     <!-- intro
     ================================================== -->
     <section id="intro" class="s-intro">
-
+        @foreach ($wedding as $item)
         <div class="s-intro__slider swiper-container">
             <div class="swiper-wrapper">
-                <div class="s-intro__slide swiper-slide" style="background-image: url('/storage/hero-1.jpeg');"></div>
-                <div class="bg-opacity-50 s-intro__slide swiper-slide" style="background-image: url('/storage/hero-2.jpeg');"></div>
-                <div class="s-intro__slide swiper-slide bg-opacity-10" style="background-image: url('/storage/hero-3.jpeg');"></div>
+                <div class="s-intro__slide swiper-slide" style="background-image: url('{{ url('/storage/' . $item->hero1) }}');"></div>
+                <div class="bg-opacity-50 s-intro__slide swiper-slide" style="background-image: url('{{ url('/storage/' . $item->hero2) }}');"></div>
+                <div class="s-intro__slide swiper-slide bg-opacity-10"style="background-image: url('{{ url('/storage/' . $item->hero3) }}');"></div>
             </div>
         </div>
 
@@ -78,7 +78,7 @@ foreach ($detail as $item) {
                     The Wedding
                 </div>
 
-                @foreach ($wedding as $item)
+                
                 <h1 class="text-huge-title">
                     {{ $item->name }}
                 </h1>

@@ -7,6 +7,7 @@ use App\Filament\Resources\WeddingResource\RelationManagers;
 use App\Models\Wedding;
 use Filament\Forms;
 use Filament\Forms\Components\Card;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
@@ -34,6 +35,9 @@ class WeddingResource extends Resource
                 Card::make()->schema([
                     TextInput::make('name')->required(),
                     MarkdownEditor::make('note')->label('Tagline')->required(),
+                    FileUpload::make('hero1')->required()->image(),
+                    FileUpload::make('hero2')->image(),
+                    FileUpload::make('hero3')->image(),
                     Select::make('status')->required()
                         ->options([
                             'Active' => 'Active',

@@ -17,6 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('note');
+            $table->string('hero1');
+            $table->string('hero2')->nullable();
+            $table->string('hero3')->nullable();
             $table->enum('status', ['Active', 'Deactive']);
             $table->timestamps();
         });
