@@ -17,7 +17,7 @@ class DetailSeeder extends Seeder
     {
         Detail::create([
             'wedding_id'        => 1,
-            'type'              => 'Akad',
+            'type'              => 'Acara Pernihakan',
             'date'              => '2050-11-05 08:00:00',
             'address'           => 'Jakarta Cathedral',
             'maps'              => 'https://maps.app.goo.gl/C3HWf7TsJvMzwLb27',

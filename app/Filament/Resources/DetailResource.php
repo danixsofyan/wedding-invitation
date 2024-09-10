@@ -36,6 +36,7 @@ class DetailResource extends Resource
                     Select::make('type')->required()
                         ->options([
                             'Akad' => 'Akad',
+                            'Acara Pernihakan' => 'Acara Pernihakan',
                             'Resepsi' => 'Resepsi',
                             'Ngunduh Mantu' => 'Ngunduh Mantu',
                         ]),

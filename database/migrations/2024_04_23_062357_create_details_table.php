@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('details', function (Blueprint $table) {
             $table->id();
             $table->foreignId('wedding_id')->constrained()->onDelete('cascade');
-            $table->enum('type', ['Akad', 'Resepsi', 'Ngunduh Mantu']);
+            $table->enum('type', ['Akad', 'Acara Pernihakan', 'Resepsi', 'Ngunduh Mantu']);
             $table->dateTime('date');
             $table->text('address');
             $table->text('maps');
